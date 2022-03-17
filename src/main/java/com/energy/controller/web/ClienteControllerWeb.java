@@ -103,7 +103,7 @@ public class ClienteControllerWeb {
 			String civicoSedeLegale, String viaSedeLegale, String ragioneSociale, String partitaIva,
 			TipoCliente tipoCliente, String email, String pec, String telefono, String nomeContatto,
 			String cognomeContatto, String telefonoContatto, String emailContatto, String indirizzoSedeOperativa,
-			String indirizzoSedeLegale, @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInserimento,
+			String indirizzoSedeLegale,
 			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto, Double fatturatoAnnuale,
 			Pageable page,Model model) {
 		
@@ -132,7 +132,7 @@ public class ClienteControllerWeb {
 		c.setEmailContatto(emailContatto);
 		c.setIndirizzoSedeOperativa(sedeOperativa);
 		c.setIndirizzoSedeLegale(sedeLegale);
-		c.setDataInserimento(dataInserimento);
+		c.setDataInserimento(LocalDate.now());
 		c.setDataUltimoContatto(dataUltimoContatto);
 		c.setFatturatoAnnuale(fatturatoAnnuale);
 		try {
@@ -166,7 +166,8 @@ public class ClienteControllerWeb {
 	public String aggiorna2(Cliente cliente,Model model, @PathVariable Long id, @RequestParam String localitaSedeOperativa
 			,String capSedeOperativa,
 			String civicoSedeOperativa, String viaSedeOperativa, String localitaSedeLegale, String capSedeLegale,
-			String civicoSedeLegale, String viaSedeLegale){
+			String civicoSedeLegale, String viaSedeLegale,
+			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto){
 		
 		Indirizzo sedeLegale = new Indirizzo();
 		sedeLegale.setCap(capSedeLegale);
@@ -187,7 +188,7 @@ public class ClienteControllerWeb {
 		cliente.setIndirizzoSedeLegale(sedeLegale);
 		cliente.setIndirizzoSedeOperativa(sedeOperativa);
 		cliente.setDataInserimento(c.getDataInserimento());
-		cliente.setDataUltimoContatto(c.getDataUltimoContatto());
+		cliente.setDataUltimoContatto(dataUltimoContatto);
 		
 		try {
 		service.update(id, cliente);

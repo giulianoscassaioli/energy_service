@@ -42,10 +42,10 @@ public class FatturaControllerWeb {
 	}
 
 	@PostMapping("/salvafattura")
-	public ModelAndView save(@RequestParam String ragioneSociale, @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate data,
+	public ModelAndView save(@RequestParam String ragioneSociale,
 			Long numero, Integer anno, BigDecimal importo, String stato,Pageable page) {
 		ModelAndView mv = new ModelAndView();
-		service.save(new Fattura(clienteservice.findByParteDelNome(ragioneSociale, page).getContent().get(0), data, numero, anno, importo, stato));
+		service.save(new Fattura(clienteservice.findByParteDelNome(ragioneSociale, page).getContent().get(0), LocalDate.now(), numero, anno, importo, stato));
 		mv.addObject("fatture", service.findAllFatture(page));
 		mv.setViewName("fatturegest");
 		return mv;
