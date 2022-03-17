@@ -1,0 +1,994 @@
+{
+	"info": {
+		"_postman_id": "acac5f90-f5ff-4769-94f6-73c861b204a3",
+		"name": "ProgettoFinale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "ordinaperragionesociale",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ordinaperragionesociale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordinaperragionesociale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ordinaperfatturato",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ordinaperfatturato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordinaperfatturato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvacliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":0,\r\n  \"ragioneSociale\": \"string\",\r\n  \"partitaIva\": \"string\",\r\n  \"tipoCliente\": \"SRL\",\r\n  \"email\": \"string\",\r\n  \"pec\": \"string\",\r\n  \"telefono\": \"string\",\r\n  \"nomeContatto\": \"string\",\r\n  \"cognomeContatto\": \"string\",\r\n  \"telefonoContatto\": \"string\",\r\n  \"emailContatto\": \"string\",\r\n  \"indirizzoSedeOperativa\": {\r\n    \r\n    \"via\": \"string\",\r\n    \"civico\": 0,\r\n    \"cap\": \"string\",\r\n    \"localita\": \"string\"\r\n  },\r\n  \"indirizzoSedeLegale\": {\r\n    \r\n    \"via\": \"string\",\r\n    \"civico\": 0,\r\n    \"cap\": \"string\",\r\n    \"localita\": \"string\"\r\n  },\r\n  \"dataInserimento\": \"2022-03-12\",\r\n  \"dataUltimoContatto\": \"2022-03-12\",\r\n  \"fatturatoAnnuale\": 0\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/salvacliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"salvacliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ordinaperprovinciasedeleg",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzEwNTUyMiwiZXhwIjoxNjQ3OTY5NTIyfQ.3u5cSZNNQQt72j1eFfC4l15wyaO0RCjdUKbHZAdO0lwyHAI52G5eZ25eNJIGu8qyCTgOaNDpzOKiqHF5oPr3pQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ordinaperprovinciasedeleg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordinaperprovinciasedeleg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ordinaperdataultimocontatto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ordinaperdataultimocontatto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordinaperdataultimocontatto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ordinaperdatains",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ordinaperdatains",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordinaperdatains"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtraperdataultimocontatto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/trovaperdataultimocontatto/2021-11-27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trovaperdataultimocontatto",
+								"2021-11-27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtraperdatainserimento",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/trovaperdatainserimento/2008-11-02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trovaperdatainserimento",
+								"2008-11-02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtraperfatturatoannuale",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/trovaperfatturatoannuale/33.000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trovaperfatturatoannuale",
+								"33.000"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtraperpartedelnome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/trovaperpartedelnome/nov",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trovaperpartedelnome",
+								"nov"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggiornacliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzE2MjExOSwiZXhwIjoxNjQ4MDI2MTE5fQ.iFX-h8et5ME0tgk_pRTj3VsXJEhJeSOm-fa6fsDLtodTiPkr45PgG8UllIwrZ6vwbLn9qdvQ5J8GBe62ydaelw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":0,\r\n  \"ragioneSociale\": \"string10\",\r\n  \"partitaIva\": \"string\",\r\n  \"tipoCliente\": \"SRL\",\r\n  \"email\": \"string\",\r\n  \"pec\": \"string\",\r\n  \"telefono\": \"string\",\r\n  \"nomeContatto\": \"string\",\r\n  \"cognomeContatto\": \"string\",\r\n  \"telefonoContatto\": \"string\",\r\n  \"emailContatto\": \"string\",\r\n  \"indirizzoSedeOperativa\": {\r\n    \"id\": 15,\r\n    \"via\": \"string2\",\r\n    \"civico\": 0,\r\n    \"cap\": \"string\",\r\n    \"localita\": \"string\",\r\n    \"comune\": {\r\n      \"id\": 0,\r\n      \"nome\": \"string\"\r\n    }\r\n  },\r\n  \"indirizzoSedeLegale\": {\r\n    \"id\": 16,\r\n    \"via\": \"string3\",\r\n    \"civico\": 0,\r\n    \"cap\": \"string\",\r\n    \"localita\": \"string\",\r\n    \"comune\": {\r\n      \"id\": 0,\r\n      \"nome\": \"string\"\r\n    }\r\n  },\r\n  \"dataInserimento\": \"2022-03-13\",\r\n  \"dataUltimoContatto\": \"2022-03-13\",\r\n  \"fatturatoAnnuale\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/aggiornacliente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aggiornacliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminacliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzE2MjExOSwiZXhwIjoxNjQ4MDI2MTE5fQ.iFX-h8et5ME0tgk_pRTj3VsXJEhJeSOm-fa6fsDLtodTiPkr45PgG8UllIwrZ6vwbLn9qdvQ5J8GBe62ydaelw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/eliminacliente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eliminacliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n {\r\n  \"userName\": \"admin\",\r\n  \"password\": \"admin\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"string\",\r\n  \"email\": \"string\",\r\n  \"role\": [\r\n    \"user\"\r\n  ],\r\n  \"password\": \"string\",\r\n  \"nome\": \"string\",\r\n  \"cognome\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fatture",
+			"item": [
+				{
+					"name": "ricercafattureperrangeimporto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ricercaperrange/23.50/3356.50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ricercaperrange",
+								"23.50",
+								"3356.50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ricercafattureperdata",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ricercaperdata/2019-03-21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ricercaperdata",
+								"2019-03-21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ricercafatturaperanno",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ricercaperanno/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ricercaperanno",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ricercaperstato",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ricercaperstato/pagata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ricercaperstato",
+								"pagata"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ricercafatturaperstatosociale",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ricercapercliente/Daewoo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ricercapercliente",
+								"Daewoo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvafattura",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"cliente\": {\r\n    \"id\": 0,\r\n    \"ragioneSociale\": \"string\",\r\n    \"partitaIva\": \"string\",\r\n    \"tipoCliente\": \"SRL\",\r\n    \"email\": \"string\",\r\n    \"pec\": \"string\",\r\n    \"telefono\": \"string\",\r\n    \"nomeContatto\": \"string\",\r\n    \"cognomeContatto\": \"string\",\r\n    \"telefonoContatto\": \"string\",\r\n    \"emailContatto\": \"string\",\r\n    \"indirizzoSedeOperativa\": {\r\n      \"id\": 0,\r\n      \"via\": \"string\",\r\n      \"civico\": 0,\r\n      \"cap\": \"string\",\r\n      \"localita\": \"string\"\r\n      }\r\n    },\r\n    \"indirizzoSedeLegale\": {\r\n      \"id\": 0,\r\n      \"via\": \"string\",\r\n      \"civico\": 0,\r\n      \"cap\": \"string\",\r\n      \"localita\": \"string\",\r\n      \"comune\": {\r\n        \"id\": 0,\r\n        \"nome\": \"string\"\r\n      }\r\n    },\r\n    \"dataInserimento\": \"2022-03-12\",\r\n    \"dataUltimoContatto\": \"2022-03-12\",\r\n    \"fatturatoAnnuale\": 0,\r\n  \"dataFattura\": \"2022-03-12\",\r\n  \"numero\": 0,\r\n  \"anno\": 0,\r\n  \"importo\": 0,\r\n  \"statoFattura\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/salvafattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"salvafattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggiornafattura",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzE2MjExOSwiZXhwIjoxNjQ4MDI2MTE5fQ.iFX-h8et5ME0tgk_pRTj3VsXJEhJeSOm-fa6fsDLtodTiPkr45PgG8UllIwrZ6vwbLn9qdvQ5J8GBe62ydaelw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"cliente\": {\r\n    \"id\": 16,\r\n    \"ragioneSociale\": \"string10\",\r\n    \"partitaIva\": \"string\",\r\n    \"tipoCliente\": \"SRL\",\r\n    \"email\": \"string\",\r\n    \"pec\": \"string\",\r\n    \"telefono\": \"string\",\r\n    \"nomeContatto\": \"string\",\r\n    \"cognomeContatto\": \"string\",\r\n    \"telefonoContatto\": \"string\",\r\n    \"emailContatto\": \"string\",\r\n    \"indirizzoSedeOperativa\": {\r\n      \"id\": 0,\r\n      \"via\": \"string\",\r\n      \"civico\": 0,\r\n      \"cap\": \"string\",\r\n      \"localita\": \"string\",\r\n      \"comune\": {\r\n        \"id\": 0,\r\n        \"nome\": \"string\"\r\n      }\r\n    },\r\n    \"indirizzoSedeLegale\": {\r\n      \"id\": 0,\r\n      \"via\": \"string\",\r\n      \"civico\": 0,\r\n      \"cap\": \"string\",\r\n      \"localita\": \"string\",\r\n      \"comune\": {\r\n        \"id\": 0,\r\n        \"nome\": \"string\"\r\n      }\r\n    },\r\n    \"dataInserimento\": \"2022-03-13\",\r\n    \"dataUltimoContatto\": \"2022-03-13\",\r\n    \"fatturatoAnnuale\": 0\r\n  },\r\n  \"dataFattura\": \"2023-03-13\",\r\n  \"numero\": 0,\r\n  \"anno\": 0,\r\n  \"importo\": 0,\r\n  \"statoFattura\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/aggiornafattura/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aggiornafattura",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminafattura",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzE2MjExOSwiZXhwIjoxNjQ4MDI2MTE5fQ.iFX-h8et5ME0tgk_pRTj3VsXJEhJeSOm-fa6fsDLtodTiPkr45PgG8UllIwrZ6vwbLn9qdvQ5J8GBe62ydaelw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/eliminafattura/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eliminafattura",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "associafattura",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"cliente\": {\r\n    \"id\": 15\r\n\r\n    },\r\n \"dataFattura\": \"2022-03-12\",\r\n  \"numero\": 0,\r\n  \"anno\": 0,\r\n  \"importo\": 0,\r\n  \"statoFattura\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/salvafattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"salvafattura"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Indirizzo",
+			"item": [
+				{
+					"name": "Allindirizzi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/indirizzi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"indirizzi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "indirizzofindbyvia",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/indirizzo/via/Via Milano",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"indirizzo",
+								"via",
+								"Via Milano"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findindirizzobyid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/indirizzo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"indirizzo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminaindirizzo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/eliminaindirizzo/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eliminaindirizzo",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvaindirizzo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"via\": \"string\",\r\n  \"civico\": 0,\r\n  \"cap\": \"string\",\r\n  \"localita\": \"string\",\r\n  \"comune\": {\r\n    \"id\": 7030,\r\n    \"nome\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/salvaindirizzo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"salvaindirizzo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggiornaindirizzo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzA4NDc0NywiZXhwIjoxNjQ3OTQ4NzQ3fQ.r1UU0r8Z0kk8Nw4X14Xk5I1BNncCGm31Opo05SWOk2uVsR-juB6bgdGlno-dU5Z7gaxgZg_AdB067AUcavadew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"via\": \"string\",\r\n  \"civico\": 0,\r\n  \"cap\": \"string\",\r\n  \"localita\": \"string\",\r\n  \"comune\": {\r\n    \"id\": 0,\r\n    \"nome\": \"string\",\r\n    \"provincia\": {\r\n      \"id\": 0,\r\n      \"nome\": \"string\",\r\n      \"sigla\": \"string\",\r\n      \"regione\": \"string\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/aggiornaindirizzo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aggiornaindirizzo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comuni",
+			"item": [
+				{
+					"name": "finAllcomuni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comuni",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comuni"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findcomuneById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comune/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comune",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findcomuneBynome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comune/nome/Agliè",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comune",
+								"nome",
+								"Agliè"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Provincie",
+			"item": [
+				{
+					"name": "findAllprovince",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/province",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findprovinciaBynome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/provincia/nome/Torino",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provincia",
+								"nome",
+								"Torino"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findprovinciaById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/provincia/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provincia",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

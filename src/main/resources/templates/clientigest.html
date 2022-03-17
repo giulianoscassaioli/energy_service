@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina Clienti</title>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Energy Service</a>
+		<span sec:authorize="isAuthenticated()" style="color:white" sec:authentication="name">username</span> 
+	</nav>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item" aria-current="page"><a href="#"
+				th:href="@{/web/clienti/homeclienti}">Home</a></li>
+			<li class="breadcrumb-item" aria-current="page"><a href="#"
+				th:href="@{/web/fatture/fatture}">Fatture</a></li>
+			<li class="breadcrumb-item active">Clienti</li>
+		</ol>
+	</nav>
+	
+	<hr>
+	<h2>Ricerca</h2>
+	<div class="filtri d-flex flex-nowrap justify-content-around">
+
+		<div class="type-details w-auto">
+			<form action="/web/clienti/getbyfatturato" method="GET">
+				<div class="form-label mb-4 form-group">
+					<label for="floatingInput2">Ricerca per Fatturato</label>
+					<div class="d-flex">
+						<input type="text" class="form-control" name="fatturato"
+							id="floatingInput2" placeholder="Fatturato" required> <input
+							type="submit" value="Cerca">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="type-details w-auto">
+			<form action="/web/clienti/getbypartedelnome" method="GET">
+				<div class="form-label form-group">
+					<label for="floatingInput">Ricerca per Ragione Sociale</label>
+					<div class="d-flex">
+						<input type="text" class="form-control" id="floatingInput"
+							name="nome" placeholder="Nome Contatto"> <input
+							type="submit" value="Cerca">
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<div class="text-center">
+		<form action="/web/clienti/clienti" method="GET">
+
+			<button class="btn btn-info" type="submit">Tutti i Clienti</button>
+		</form>
+	</div>
+	<hr>
+	<div class="intro mb-2">
+		<div class="table-responsive">
+			<table class="table table-hover table-sm">
+				<tr>
+					<th>Partita Iva</th>
+					<th>Ragione Sociale</th>
+					<th>Tipo Cliente</th>
+					<th>Email</th>
+					<th>Pec</th>
+					<th>Telefono</th>
+					<th>Indirizzo Sede Operativa</th>
+					<th>Indirizzo Sede Legale</th>
+					<th>Data Inserimento</th>
+					<th>Data Ultimo Contatto</th>
+					<th>Fatturato Annuale</th>
+
+				</tr>
+				<div th:each="cliente: ${clienti}">
+					<tr>
+						<td th:text="${cliente.getPartitaIva()}" th:field="*{partitaIva}"></td>
+						<td th:text="${cliente.getRagioneSociale()}"
+							th:field="*{ragioneSociale}"></td>
+						<td th:text="${cliente.getTipoCliente()}"
+							th:field="*{tipoCliente}"></td>
+						<td th:text="${cliente.getEmail()}" th:field="*{email}"></td>
+						<td th:text="${cliente.getPec()}" th:field="*{pec}"></td>
+						<td th:text="${cliente.getTelefono}" th:field="*{telefono}"></td>
+						<td th:text="${cliente.getIndirizzoSedeOperativa().getVia()}"
+							th:field="*{via}"></td>
+						<td th:text="${cliente.getIndirizzoSedeLegale().getVia()}"
+							th:field="*{via}"></td>
+						<td th:text="${cliente.getDataInserimento()}"
+							th:field="*{dataInserimento}"></td>
+						<td th:text="${cliente.getDataUltimoContatto()}"
+							th:field="*{dataUltimoContatto}"></td>
+						<td th:text="${cliente.getFatturatoAnnuale()}"
+							th:field="*{fatturatoAnnuale}"></td>
+						<!-- 						<form method="get" action="#" -->
+						<!-- 							th:action="@{/aggiornaStudente/{matricola}(matricola=${studente.getMatricola()})}"> -->
+						<!-- 							<td><input type="submit" value="Aggiorna"></td> -->
+						<!-- 						</form> -->
+						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
+							action="#"
+							th:action="@{/web/clienti/eliminaCliente/{id}(id=${cliente.getId()})}">
+							<td><input type="submit"
+								onclick="return confirm('Sei sicuro di voler cancellare questo cliente?')"
+								value="Elimina"></td>
+						</form>
+					</tr>
+				</div>
+			</table>
+		</div>
+	</div>
+	
+	<nav aria-label="Pagination" th:if="${clienti.totalPages gt 0}">
+    <ul class="pagination justify-content-center font-weight-bold">
+        <li class="page-item" th:classappend="${clienti.number eq 0} ? 'disabled'">
+            <a class="page-link"
+               th:href="@{/web/clienti/clienti?pageNumber={id}(id=${clienti.number lt 2 ? 1 : clienti.number})}"
+               aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" th:classappend="${i eq clienti.number + 1} ? 'active'"
+            th:each="i : ${#numbers.sequence( 1, clienti.totalPages, 1)}">
+            <a class="page-link" th:href="@{/web/clienti/clienti?pageNumber={id}(id=${i})}" th:text="${i}"
+               th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+        </li>
+        <li class="page-item" th:classappend="${clienti.number + 1 eq clienti.totalPages} ? 'disabled'">
+            <a class="page-link"
+               th:href="@{/web/clienti/clienti?pageNumber={id}(id=${clienti.number + 2})}"
+               aria-label="Next" title="Next Page" data-toggle="tooltip">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+            
+	<div class="text-center">
+		<!-- 		<a href="#" class="btn btn-info" th:href="@{/studenteAggiungi}">Aggiungi Studente-->
+		</a> <a href="#" class="btn btn-info"
+			th:href="@{/web/clienti/homeclienti}">Torna alla home</a>
+			</a> <a sec:authorize="hasRole('ROLE_ADMIN')" href="#" class="btn btn-info"
+			th:href="@{/web/clienti/aggiungicliente}">Aggiungi Cliente</a>
+	</div>
+	<div class="footer bg-secondary p-2 text-center mt-3">
+		<p>copyright &copy; Powered by Giuliano Scassaioli
+		<p>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+</html>

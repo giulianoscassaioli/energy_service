@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina Fatture</title>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Energy Service </a>
+		<span sec:authorize="isAuthenticated()" style="color:white" sec:authentication="name">username</span> 
+	</nav>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item" aria-current="page"><a href="#"
+				th:href="@{/web/clienti/homeclienti}">Home</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Fatture</li>
+			<li class="breadcrumb-item"><a href="#"
+				th:href="@{/web/clienti/clienti}">Clienti</a></li>
+		</ol>
+	</nav>
+	<hr>
+	<h2>Ricerca</h2>
+	<div class="filtri d-flex flex-nowrap justify-content-around">
+		<div class="type-details w-auto">
+			<form action="/web/fatture/getbycliente" method="GET">
+				<div class="form-label mb-4 form-group">
+					<label for="floatingInput2">Ricerca per Ragione Sociale</label>
+					<div class="d-flex">
+						<input type="text" class="form-control" id="floatingInput2"
+							name="cliente" placeholder="Cliente"> <input
+							type="submit" value="Cerca">
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="type-details w-auto">
+			<form action="/web/fatture/getbydata" method="GET">
+				<div class="form-label mb-4 form-group">
+					<label for="floatingInput3">Ricerca per Data</label>
+					<div class="d-flex">
+						<input type="date" class="form-control" name="data"
+							id="floatingInput3" placeholder="Fatturato"> <input
+							type="submit" value="Cerca">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="type-details w-auto">
+			<form action="/web/fatture/getbyrangeimporto" method="GET">
+				<div class="form-label mb-4 form-group">
+					<label for="floatingInput3">Ricerca per Range Importo</label>
+					<div class="d-flex">
+						<input type="text" name="minimo" placeholder="importo minimo"
+							aria-label="Minimo" class="form-control"><input
+							type="text" name="massimo" placeholder="importo massimo"
+							aria-label="Massimo" class="form-control"><input
+							type="submit" value="Ricerca Per Range Importo">
+
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<div class="text-center">
+		<form action="/web/fatture/fatture" method="GET">
+			<button class="btn btn-info" type="submit">Tutte le Fatture</button>
+		</form>
+	</div>
+	<hr>
+	<div class="intro mb-2">
+		<div class="table-responsive">
+			<table class="table table-hover table-sm">
+				<tr>
+					<th>Ragione Sociale</th>
+					<th>Data Fattura</th>
+					<th>Numero Fattura</th>
+					<th>Anno</th>
+					<th>Importo</th>
+					<th>Stato Fattura</th>
+				</tr>
+
+				<div th:each="fattura: ${fatture}">
+					<tr>
+						<td th:text="${fattura.getCliente().getRagioneSociale()}"></td>
+						<td th:text="${fattura.getDataFattura()}"></td>
+						<td th:text="${fattura.getNumero()}"></td>
+						<td th:text="${fattura.getAnno()}"></td>
+						<td th:text="${fattura.getImporto()}"></td>
+						<td th:text="${fattura.getStatoFattura()}"></td>
+						<!-- 						<form method="get" action="#" -->
+						<!-- 							th:action="@{/aggiornaCorso/{codice}(codice=${corso.getCodice()})}"> -->
+						<!-- 							<td><input type="submit" value="Aggiorna"></td> -->
+						<!-- 						</form> -->
+						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
+							action="#"
+							th:action="@{/web/fatture/eliminaFattura/{id}(id=${fattura.getId()})}">
+							<td><input type="submit"
+								onclick="return confirm('Sei sicuro di voler cancellare questa fattura?')"
+								value="Elimina"></td>
+						</form>
+					</tr>
+				</div>
+			</table>
+		</div>
+	</div>
+	<nav aria-label="Pagination" th:if="${fatture.totalPages gt 0}">
+    <ul class="pagination justify-content-center font-weight-bold">
+        <li class="page-item" th:classappend="${fatture.number eq 0} ? 'disabled'">
+            <a class="page-link"
+               th:href="@{/web/fatture/fatture?pageNumber={id}(id=${fatture.number lt 2 ? 1 : fatture.number})}"
+               aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" th:classappend="${i eq fatture.number + 1} ? 'active'"
+            th:each="i : ${#numbers.sequence( 1, fatture.totalPages, 1)}">
+            <a class="page-link" th:href="@{/web/fatture/fatture?pageNumber={id}(id=${i})}" th:text="${i}"
+               th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+        </li>
+        <li class="page-item" th:classappend="${fatture.number + 1 eq fatture.totalPages} ? 'disabled'">
+            <a class="page-link"
+               th:href="@{/web/fatture/fatture?pageNumber={id}(id=${fatture.number + 2})}"
+               aria-label="Next" title="Next Page" data-toggle="tooltip">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+	<div class="text-center">
+		<!-- 		<a href="#" class="btn btn-info" th:href="@{/corsoAggiungi}">AggiungiCorso</a>  -->
+		<a href="#" class="btn btn-info" th:href="@{/web/clienti/homeclienti}">Torna
+			alla home</a>
+	    </a> <a sec:authorize="hasRole('ROLE_ADMIN')" href="#" class="btn btn-info"
+			th:href="@{/web/fatture/aggiungifattura}">Aggiungi Fattura</a>
+	</div>
+
+	<div class="footer bg-secondary p-2 text-center mt-2">
+		<p>copyright &copy; Powered by Giuliano Scassaioli
+		<p>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+</html>

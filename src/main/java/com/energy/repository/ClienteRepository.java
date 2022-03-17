@@ -1,0 +1,50 @@
+package com.energy.repository;
+
+import java.time.LocalDate;
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.energy.model.Cliente;
+
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+	
+	Page<Cliente> findByRagioneSocialeLike(String ragioneSociale,Pageable pageable);
+	
+	Optional<Cliente> findByRagioneSociale(String ragioneSociale);
+	
+	boolean existsByEmail(String email);
+	
+	boolean existsByTelefono(String telefono);
+	
+	boolean existsByPartitaIva(String partitaIva);
+	
+	boolean existsByPec(String pec);
+	
+	Page<Cliente> findByOrderByRagioneSociale(Pageable pageable);
+	
+	Page<Cliente> findByOrderByFatturatoAnnuale(Pageable page);
+	
+	Page<Cliente> findByOrderByDataInserimento(Pageable page);
+   
+	Page<Cliente> findByOrderByDataUltimoContatto(Pageable page);
+	
+	Page<Cliente> findByOrderByIndirizzoSedeLegaleComuneProvinciaNome(Pageable page);
+	
+	Page<Cliente> findByFatturatoAnnuale (Pageable page, Double fatturato);
+	
+	Page<Cliente> findByDataInserimento (Pageable page, LocalDate data);
+	
+	Page<Cliente> findByDataUltimoContatto (Pageable page, LocalDate data);
+
+	Optional<Cliente> getByNomeContatto(String nomeContatto);
+	
+	Optional<Cliente> findByIndirizzoSedeOperativaId(Long id);
+	
+	Optional<Cliente> findByIndirizzoSedeLegaleId(Long id);
+	
+	
+
+}
