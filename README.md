@@ -17,8 +17,14 @@ This is an application to manage a Shopping Cart with products, coupons and taxe
 
 ### Tech stack: 
 - Java + Spring Boot
+- Authentication through Jason Web Token for the API RESTfull service
+- Authentication for the Web Service (including Login and Signup)
+- Support of Pagination
 - JUnit
-- Visual Studio Code
+- Swagger Documentation
+- Eclipse
+- Postgress DBMS
+- Thymeleaf for the Web Service (Front-End)
 - Advanced REST Client
 - Maven
 - Git and Gihub, of course : ) 
@@ -30,7 +36,7 @@ Latest stable version: 1.0
 
 ## Main Features implemented
 
-- Web welcome page
+- Web service
 - Input/Output via REST API
 
 ## Input / Output

@@ -75,43 +75,43 @@ public class PopolaDb implements CommandLineRunner {
 		Cliente c1 = new Cliente("Daewoo", "2762583", TipoCliente.SRL, "daewoo@gmail.com", "daewoo@pec.com", "16369",
 				"Emma", "Pisano", "37125785", "emma@gmail.com", i1, i1, LocalDate.of(2008, 11, 02),
 				LocalDate.of(2021, 11, 27), 33.000);
-		Cliente c2 = new Cliente("Genoveffa", "4267293", TipoCliente.SAS, "genoveffa@gmail.com", "genoveffa@pec.com",
+		Cliente c2 = new Cliente("Brondi", "4267293", TipoCliente.SAS, "brondi@gmail.com", "brondi@pec.com",
 				"94678", "Genoveffa", "Nord", "3734690", "genoveffa@gmail.com", i2, i2, LocalDate.of(2010, 12, 17),
 				LocalDate.of(2023, 2, 1), 450.000);
-		Cliente c3 = new Cliente("Dario", "2762598", TipoCliente.SRL, "dario@gmail.com", "dario@pec.com", "35965",
+		Cliente c3 = new Cliente("Index", "2762598", TipoCliente.SRL, "index@gmail.com", "index@pec.com", "35965",
 				"Dario", "Di Marco", "337125785", "dario@gmail.com", i3, i3, LocalDate.of(2000, 11, 27),
 				LocalDate.of(2020, 6, 7), 21.000);
-		Cliente c4 = new Cliente("Marco", "84872466", TipoCliente.SAS, "marco@gmail.com", "marco@pec.com", "8916369",
+		Cliente c4 = new Cliente("Indesit", "84872466", TipoCliente.SAS, "indesit@gmail.com", "indesit@pec.com", "8916369",
 				"Marco", "Rossi", "32685543", "marco@gmail.com", i4, i4, LocalDate.of(2009, 2, 12),
 				LocalDate.of(2018, 4, 21), 500.000);
-		Cliente c5 = new Cliente("Noemi", "215789", TipoCliente.SPA, "noemi@gmail.com", "noemi@pec.com", "74732",
+		Cliente c5 = new Cliente("Roventa", "215789", TipoCliente.SPA, "roventa@gmail.com", "roventai@pec.com", "74732",
 				"Noemi", "Ambra", "38455379", "noemi@gmail.com", i5, i5, LocalDate.of(2007, 11, 27),
 				LocalDate.of(2015, 11, 27), 300.0);
-		Cliente c6 = new Cliente("Francesco", "1578904", TipoCliente.PA, "francesco@gmail.com", "francesco@pec.com",
+		Cliente c6 = new Cliente("Rovagnati", "1578904", TipoCliente.PA, "rovagnati@gmail.com", "rovagnati@pec.com",
 				"43226", "Francesco", "Oll", "39583829", "francesco@gmail.com", i6, i6, LocalDate.of(2004, 3, 25),
 				LocalDate.of(2014, 4, 21), 150.000);
-		Cliente c7 = new Cliente("Peppe", "824689", TipoCliente.SRL, "peppe@gmail.com", "peppe@pec.com", "84335",
+		Cliente c7 = new Cliente("Fiat", "824689", TipoCliente.SRL, "fiat@gmail.com", "fiat@pec.com", "84335",
 				"Peppe", "Bianco", "6327884", "peppe@gmail.com", i7, i7, LocalDate.of(2002, 6, 17),
 				LocalDate.of(2006, 1, 3), 67.000);
-		Cliente c8 = new Cliente("Carmen", "173577", TipoCliente.SAS, "carmen@gmail.com", "carmen@pec.com", "24789",
+		Cliente c8 = new Cliente("Reanault", "173577", TipoCliente.SAS, "reanault@gmail.com", "reanault@pec.com", "24789",
 				"Carmen", "Di Pietro", "39864357", "carmen@gmail.com", i8, i8, LocalDate.of(2009, 7, 7),
 				LocalDate.of(2016, 11, 27), 10.000);
-		Cliente c9 = new Cliente("Natasha", "4367843", TipoCliente.PA, "natasha@gmail.com", "natasha@pec.com", "1876369",
+		Cliente c9 = new Cliente("Bitservice", "4367843", TipoCliente.PA, "bitservice@gmail.com", "bitservice@pec.com", "1876369",
 				"Natasha", "Viola", "37125785", "natasha@gmail.com", i9, i9, LocalDate.of(2004, 4, 17),
 				LocalDate.of(2007, 8, 22), 40.000);
-		Cliente c10 = new Cliente("Katiusha", "657853", TipoCliente.PA, "katiusha@gmail.com", "katiusha@pec.com",
+		Cliente c10 = new Cliente("Tecnology", "657853", TipoCliente.PA, "tecnologya@gmail.com", "tecnology@pec.com",
 				"9653400", "Katiusha", "Blu", "312356906", "katiusha@gmail.com", i10, i10, LocalDate.of(2001, 1, 3),
 				LocalDate.of(2009, 12, 23), 70.000);
-		Cliente c11 = new Cliente("Filippa", "9534679", TipoCliente.SPA, "filippa@gmail.com", "filippa@pec.com",
+		Cliente c11 = new Cliente("Enterprice", "9534679", TipoCliente.SPA, "enterprice@gmail.com", "enterprice@pec.com",
 				"43322554", "Filippa", "Mollica", "3456754", "filippa@gmail.com", i11, i11, LocalDate.of(2021, 11, 27),
 				LocalDate.of(2021, 11, 27), 450.000);
-		Cliente c12 = new Cliente("Maria", "246796", TipoCliente.SAS, "maria@gmail.com", "maria@pec.com", "125664",
+		Cliente c12 = new Cliente("Ferrari", "246796", TipoCliente.SAS, "ferrari@gmail.com", "ferrari@pec.com", "125664",
 				"Maria", "Arancia", "312468975", "maria@gmail.com", i12, i12, LocalDate.of(2001, 9, 11),
 				LocalDate.of(2018, 4, 28), 133.000);
-		Cliente c13 = new Cliente("Wanda", "963678", TipoCliente.SRL, "wanda@gmail.com", "wanda@pec.com", "1636912",
+		Cliente c13 = new Cliente("Lamborghini", "963678", TipoCliente.SRL, "lamborghini@gmail.com", "lamborghini@pec.com", "1636912",
 				"Wanda", "Maximoff", "396543675", "wanda@gmail.com", i13, i13, LocalDate.of(2011, 5, 14),
 				LocalDate.of(2012, 1, 21), 28.000);
-		Cliente c14 = new Cliente("Shantal", "683689", TipoCliente.SRL, "shantal@gmail.com", "shantal@pec.com", "1636954",
+		Cliente c14 = new Cliente("Gelati", "683689", TipoCliente.SRL, "gelati@gmail.com", "gelati@pec.com", "1636954",
 				"Shantal", "Pera", "37125785", "shantal@gmail.com", i14, i14, LocalDate.of(2002, 4, 19),
 				LocalDate.of(2001, 5, 24), 11.000);
 

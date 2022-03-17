@@ -188,6 +188,7 @@ public class ClienteControllerWeb {
 		cliente.setIndirizzoSedeOperativa(sedeOperativa);
 		cliente.setDataInserimento(c.getDataInserimento());
 		cliente.setDataUltimoContatto(c.getDataUltimoContatto());
+		
 		try {
 		service.update(id, cliente);
 		}
