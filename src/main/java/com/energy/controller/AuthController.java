@@ -144,10 +144,12 @@ public class AuthController {
 		ModelAndView model = new ModelAndView();
 		if (userRepository.existsByUserName(signUpRequest.getUsername())) {
 			model.setViewName("errore");
+			model.addObject("messaggio","Questo username è gia in uso");
 			return model;
 		}
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
 			model.setViewName("errore");
+			model.addObject("messaggio","Questa e-mail è gia registata nel sistema");
 			return model;
 		}
 		Utente user = new Utente(signUpRequest.getUsername(), signUpRequest.getEmail(),
