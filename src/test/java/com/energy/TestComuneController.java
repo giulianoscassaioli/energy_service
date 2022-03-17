@@ -27,20 +27,20 @@ public class TestComuneController {
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaComuniUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/comuni")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/comuni")).andExpect(status().isOk());
     }
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaComuneByIdUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/comune/{id}","1")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/comune/{id}","1")).andExpect(status().isOk());
        
     }
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaComuneByNomeUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/comune/nome/{nome}","Roma")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/comune/nome/{nome}","Roma")).andExpect(status().isOk());
     }
 	
 

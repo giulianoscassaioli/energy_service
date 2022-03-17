@@ -17129,4 +17129,624 @@ Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.
 ""2022-03-17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 ""2022-03-17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 ""2022-03-17 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-17 [RMI TCP Connection(39)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-03-17 [RMI TCP Connection(39)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [RMI TCP Connection(39)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+""2022-03-17 [RMI TCP Connection(39)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Starting EpicEnergyServicesGiulianoApplication using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 24092 (C:\eclipse-workspace\epicEnergyServicesGiuliano\target\classes started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [restartedMain] DEBUG c.e.EpicEnergyServicesGiulianoApplication - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2022-03-17 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1561 ms
+""2022-03-17 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [restartedMain] DEBUG com.energy.security.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Started EpicEnergyServicesGiulianoApplication in 5.058 seconds (JVM running for 5.775)
+""2022-03-17 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-03-17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-03-17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.energy.exception.CrmException: Esiste gia un cliente con questa e-mail!]
+""2022-03-17 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.energy.exception.CrmException: Esiste gia un cliente con questa partita iva!]
+""2022-03-17 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Starting EpicEnergyServicesGiulianoApplication using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 24092 (C:\eclipse-workspace\epicEnergyServicesGiuliano\target\classes started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [restartedMain] DEBUG c.e.EpicEnergyServicesGiulianoApplication - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 368 ms
+""2022-03-17 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+""2022-03-17 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [restartedMain] DEBUG com.energy.security.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Started EpicEnergyServicesGiulianoApplication in 1.385 seconds (JVM running for 794.713)
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-17 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-03-17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-03-17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestIndirizzoController - Starting TestIndirizzoController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 7612 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestIndirizzoController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestIndirizzoController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestIndirizzoController - Started TestIndirizzoController in 10.578 seconds (JVM running for 13.326)
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.energy.EpicEnergyServicesGiulianoApplicationTests], using SpringBootContextLoader
+""2022-03-17 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.energy.EpicEnergyServicesGiulianoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+""2022-03-17 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.energy.EpicEnergyServicesGiulianoApplicationTests]: EpicEnergyServicesGiulianoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.energy.EpicEnergyServicesGiulianoApplication for test class com.energy.EpicEnergyServicesGiulianoApplicationTests
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@38870173, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@cdfb870, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3e9760d8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3690548b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@369c47b3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47717528, org.springframework.test.context.transaction.TransactionalTestExecutionListener@42e54cbe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76657c65, org.springframework.test.context.event.EventPublishingTestExecutionListener@22901cc5, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@6e84e58a, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@66cd458, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5b3706a4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@79635f33, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@30825d20, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@502c917c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@334daffb, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5034e466]
+""2022-03-17 [main] INFO  c.e.EpicEnergyServicesGiulianoApplicationTests - Starting EpicEnergyServicesGiulianoApplicationTests using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 7612 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.e.EpicEnergyServicesGiulianoApplicationTests - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.e.EpicEnergyServicesGiulianoApplicationTests - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  c.e.EpicEnergyServicesGiulianoApplicationTests - Started EpicEnergyServicesGiulianoApplicationTests in 2.8 seconds (JVM running for 28.017)
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.energy.TestClienteController], using SpringBootContextLoader
+""2022-03-17 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.energy.TestClienteController]: no resource found for suffixes {-context.xml, Context.groovy}.
+""2022-03-17 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.energy.TestClienteController]: TestClienteController does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.energy.EpicEnergyServicesGiulianoApplication for test class com.energy.TestClienteController
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4ac490df, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39dddb99, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3427e640, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4c7e0e3d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@22d23d05, org.springframework.test.context.support.DirtiesContextTestExecutionListener@75842bd5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7e1ad6c3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@422920db, org.springframework.test.context.event.EventPublishingTestExecutionListener@71a0178e, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@252e40ec, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@daa2644, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@60ef0d2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@77639bfa, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@201d8cda, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7cd9069b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@da0f1b2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@66f707b7]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.energy.TestComuneController], using SpringBootContextLoader
+""2022-03-17 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.energy.TestComuneController]: no resource found for suffixes {-context.xml, Context.groovy}.
+""2022-03-17 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.energy.TestComuneController]: TestComuneController does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.energy.EpicEnergyServicesGiulianoApplication for test class com.energy.TestComuneController
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f1dfa71, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@37ddc04f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7c4edd8b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@67fbfb46, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@67354bba, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3eb320ab, org.springframework.test.context.transaction.TransactionalTestExecutionListener@341b0073, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@c82ec7d, org.springframework.test.context.event.EventPublishingTestExecutionListener@41270ecc, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@6636c83b, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@ac25416, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@11b8b037, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@68909da2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@38b7e79b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@20cd767f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@74a05359, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@18b1bde2]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.energy.TestControllerAutorization], using SpringBootContextLoader
+""2022-03-17 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.energy.TestControllerAutorization]: no resource found for suffixes {-context.xml, Context.groovy}.
+""2022-03-17 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.energy.TestControllerAutorization]: TestControllerAutorization does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.energy.EpicEnergyServicesGiulianoApplication for test class com.energy.TestControllerAutorization
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@669d9970, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6082f3f9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@53d3b0b9, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@15f31981, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1f2f4456, org.springframework.test.context.support.DirtiesContextTestExecutionListener@68c56171, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26dd52a8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2bef68e3, org.springframework.test.context.event.EventPublishingTestExecutionListener@4e87843c, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@d8aba74, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@418ee17f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@11f631dd, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@63a2e1bb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3ba3aea1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@d1035b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2d489515, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5993063e]
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.energy.TestFatturaController], using SpringBootContextLoader
+""2022-03-17 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.energy.TestFatturaController]: no resource found for suffixes {-context.xml, Context.groovy}.
+""2022-03-17 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.energy.TestFatturaController]: TestFatturaController does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.energy.EpicEnergyServicesGiulianoApplication for test class com.energy.TestFatturaController
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+""2022-03-17 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f79da7c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39d4bc9b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@274ce740, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@63b90c81, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2f280b0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1eded411, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5ee8466d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@751e9435, org.springframework.test.context.event.EventPublishingTestExecutionListener@637f6d26, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@be95304, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@172ea73a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@161026d6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@e1e7f6f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4f2e6cdb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2d5b1573, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3a6ab098, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@47f245bd]
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestClienteController - Starting TestClienteController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 9452 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestClienteController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestClienteController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 4 ms
+""2022-03-17 [main] INFO  com.energy.TestClienteController - Started TestClienteController in 8.473 seconds (JVM running for 9.565)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestClienteController - Starting TestClienteController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 25332 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestClienteController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestClienteController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestClienteController - Started TestClienteController in 8.374 seconds (JVM running for 9.37)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestClienteController - Starting TestClienteController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 24596 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestClienteController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestClienteController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+""2022-03-17 [main] INFO  com.energy.TestClienteController - Started TestClienteController in 9.166 seconds (JVM running for 10.246)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestComuneController - Starting TestComuneController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 18312 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestComuneController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestComuneController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestComuneController - Started TestComuneController in 7.734 seconds (JVM running for 8.694)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 27412 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 7.73 seconds (JVM running for 8.682)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 4044 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 7.684 seconds (JVM running for 8.61)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 12848 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 7.873 seconds (JVM running for 8.811)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestFatturaController - Starting TestFatturaController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 26764 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestFatturaController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestFatturaController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestFatturaController - Started TestFatturaController in 8.076 seconds (JVM running for 9.025)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestFatturaController - Starting TestFatturaController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 9236 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestFatturaController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestFatturaController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestFatturaController - Started TestFatturaController in 9.109 seconds (JVM running for 10.107)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestIndirizzoController - Starting TestIndirizzoController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 25088 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestIndirizzoController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestIndirizzoController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestIndirizzoController - Started TestIndirizzoController in 8.146 seconds (JVM running for 9.147)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestComuneController - Starting TestComuneController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 27456 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestComuneController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestComuneController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  com.energy.TestComuneController - Started TestComuneController in 8.695 seconds (JVM running for 9.656)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  com.energy.TestComuneController - Starting TestComuneController using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 13444 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG com.energy.TestComuneController - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  com.energy.TestComuneController - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+""2022-03-17 [main] INFO  com.energy.TestComuneController - Started TestComuneController in 7.617 seconds (JVM running for 8.537)
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 10128 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 8.196 seconds (JVM running for 9.143)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 2276 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 7.799 seconds (JVM running for 8.781)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 22032 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 8.116 seconds (JVM running for 9.082)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Starting TestControllerAutorization using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 8336 (started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [main] DEBUG c.energy.TestControllerAutorization - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+""2022-03-17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+""2022-03-17 [main] INFO  c.energy.TestControllerAutorization - Started TestControllerAutorization in 8.423 seconds (JVM running for 9.43)
+""2022-03-17 [main] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' not supported
+""2022-03-17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [RMI TCP Connection(62)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-03-17 [RMI TCP Connection(62)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [RMI TCP Connection(62)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+""2022-03-17 [RMI TCP Connection(62)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Starting EpicEnergyServicesGiulianoApplication using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 23500 (C:\eclipse-workspace\epicEnergyServicesGiuliano\target\classes started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [restartedMain] DEBUG c.e.EpicEnergyServicesGiulianoApplication - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2022-03-17 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1425 ms
+""2022-03-17 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.5.Final
+""2022-03-17 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-03-17 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [restartedMain] DEBUG com.energy.security.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Started EpicEnergyServicesGiulianoApplication in 4.731 seconds (JVM running for 5.416)
+""2022-03-17 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-03-17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Starting EpicEnergyServicesGiulianoApplication using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 23500 (C:\eclipse-workspace\epicEnergyServicesGiuliano\target\classes started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [restartedMain] DEBUG c.e.EpicEnergyServicesGiulianoApplication - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 389 ms
+""2022-03-17 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+""2022-03-17 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [restartedMain] DEBUG com.energy.security.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Started EpicEnergyServicesGiulianoApplication in 2.24 seconds (JVM running for 836.867)
+""2022-03-17 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+""2022-03-17 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Starting EpicEnergyServicesGiulianoApplication using Java 11.0.12 on LAPTOP-B5M0M7UH with PID 23500 (C:\eclipse-workspace\epicEnergyServicesGiuliano\target\classes started by giulg in C:\eclipse-workspace\epicEnergyServicesGiuliano)
+""2022-03-17 [restartedMain] DEBUG c.e.EpicEnergyServicesGiulianoApplication - Running with Spring Boot v2.6.4, Spring v5.3.16
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 7 JPA repository interfaces.
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 346 ms
+""2022-03-17 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+""2022-03-17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+""2022-03-17 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-17 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-17 [restartedMain] DEBUG com.energy.security.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Or [Ant [pattern='/api/**'], Ant [pattern='/auth/**']]
+""2022-03-17 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-17 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-17 [restartedMain] INFO  c.e.EpicEnergyServicesGiulianoApplication - Started EpicEnergyServicesGiulianoApplication in 1.283 seconds (JVM running for 844.837)
+""2022-03-17 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 "

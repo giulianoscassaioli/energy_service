@@ -24,20 +24,20 @@ public class TestFatturaController {
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaFattureUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/allfatture")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/allfatture")).andExpect(status().isOk());
     }
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaFattureByAnnoUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/ricercaperanno/{anno}","2020")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/ricercaperanno/{anno}","2020")).andExpect(status().isOk());
        
     }
 	
 	@Test
 	@WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
 	public void testAddFattura() throws Exception{
-		this.mockMvc.perform(post("/salvafattura").contentType(MediaType.APPLICATION_JSON_VALUE)
+		this.mockMvc.perform(post("/api/salvafattura").contentType(MediaType.APPLICATION_JSON_VALUE)
 				.content("{\r\n"
 						+ "  \"id\": 0,\r\n"
 						+ "  \"dataFattura\": \"2022-03-12\",\r\n"

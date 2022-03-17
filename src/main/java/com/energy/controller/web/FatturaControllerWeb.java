@@ -51,16 +51,6 @@ public class FatturaControllerWeb {
 		return mv;
 	}
 	
-//	@GetMapping("/getbyrangeimporto")
-//	public ModelAndView getfatturabyrangeimportoviewadmin(@RequestParam(defaultValue = "0") BigDecimal minimo,
-//			@RequestParam(defaultValue = "100000") BigDecimal massimo, Pageable page) {
-//		ModelAndView myModel=new ModelAndView();
-//		Page<Fattura> list = service.findByRangeImporto(minimo, massimo, page);
-//		myModel.addObject("fatture", list);
-//		myModel.setViewName("fatturegest");
-//		return myModel;
-//
-//		}
 	
 	@GetMapping("/aggiornaFattura/{id}")
 	public ModelAndView aggiorna(@PathVariable Long id){

@@ -25,13 +25,13 @@ public class TestIndirizzoController {
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaLibriUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/indirizzi")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/indirizzi")).andExpect(status().isOk());
     }
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaLibriByIdUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/indirizzo/{id}","1")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/indirizzo/{id}","1")).andExpect(status().isOk());
        
     }
 	
@@ -39,7 +39,7 @@ public class TestIndirizzoController {
 	@Test
 	@WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
 	public void testAddLibro() throws Exception {
-		this.mockMvc.perform(post("/salvaindirizzo").contentType(MediaType.APPLICATION_JSON_VALUE)
+		this.mockMvc.perform(post("/api/salvaindirizzo").contentType(MediaType.APPLICATION_JSON_VALUE)
 				.content("{\r\n" 
 						+"     \"id\":\"20\",\r\n"
 						+ "    \"via\":\"viaTest\",\r\n" 

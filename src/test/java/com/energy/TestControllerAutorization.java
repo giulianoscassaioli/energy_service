@@ -22,8 +22,8 @@ public class TestControllerAutorization {
 
 	@Test
 	@WithAnonymousUser
-	public void listaAutoriWhenUtenteIsAnonymous() throws Exception {
-		this.mockMvc.perform(get("/api/comuni")).andExpect(status().isUnauthorized());
+	public void listaComuniWhenUtenteIsAnonymous() throws Exception {
+		this.mockMvc.perform(get("/api/comuni")).andExpect(status().isForbidden());
 	}
 
 	@Test

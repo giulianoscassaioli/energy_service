@@ -39,13 +39,13 @@ public class TestClienteController {
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaAutoriUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/trovatutticlienti")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/trovatutticlienti")).andExpect(status().isOk());
     }
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaAutoreByIdUtenteAutenticato() throws Exception {
-        this.mockMvc.perform(get("/trovacliente/id/{id}","1")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/trovacliente/id/{id}","1")).andExpect(status().isOk());
        
     }
 	
@@ -54,7 +54,7 @@ public class TestClienteController {
 	@Test
 	@WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
 	public void testAddCliente() throws Exception {
-		this.mockMvc.perform(post("/salvacliente").contentType(MediaType.APPLICATION_JSON_VALUE)
+		this.mockMvc.perform(post("/api/salvacliente").contentType(MediaType.APPLICATION_JSON_VALUE)
 				.content("{\r\n"
 						+ "  \"id\":0,\r\n"
 						+ "  \"ragioneSociale\": \"string1\",\r\n"

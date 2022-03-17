@@ -42,12 +42,6 @@ public class ClienteControllerWeb {
 	@Autowired
 	IndirizzoService indservice;
 
-//	@GetMapping("/clienti")
-//	public ModelAndView viewCorsi(Pageable page) {
-//		return new ModelAndView("clientigest","clienti",service.findAllClienti(page));
-//		
-//	}
-
 	@GetMapping("/clienti")
 	public ModelAndView viewCorsi(Pageable page,@RequestParam(required = false, defaultValue = "1") Integer pageNumber
 			, Integer size) {
@@ -194,8 +188,13 @@ public class ClienteControllerWeb {
 		cliente.setIndirizzoSedeOperativa(sedeOperativa);
 		cliente.setDataInserimento(c.getDataInserimento());
 		cliente.setDataUltimoContatto(c.getDataUltimoContatto());
+		try {
 		service.update(id, cliente);
-	   
+		}
+		catch (CrmException e){
+			model.addAttribute("messaggio",e.getMessage());
+			return "errore";
+		}
 		  
 		  return "redirect:/web/clienti/clienti";
 		
