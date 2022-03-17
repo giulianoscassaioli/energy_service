@@ -46,7 +46,7 @@ public class FormLoginConfigurationAdapter extends WebSecurityConfigurerAdapter 
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		 http.authorizeRequests(authz -> authz.antMatchers("/*", "/css/layout.css").permitAll().anyRequest().authenticated()).formLogin();
+		 http.authorizeRequests(authz -> authz.antMatchers("/*").permitAll().anyRequest().authenticated()).formLogin();
 
 	}
 }

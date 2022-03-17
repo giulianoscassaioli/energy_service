@@ -1,6 +1,7 @@
 package com.energy;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -31,6 +32,20 @@ public class TestFatturaController {
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
     public void listaFattureByAnnoUtenteAutenticato() throws Exception {
         this.mockMvc.perform(get("/api/ricercaperanno/{anno}","2020")).andExpect(status().isOk());
+       
+    }
+	
+	@Test
+    @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
+    public void eliminaFattureByIdUtenteAutenticato() throws Exception {
+        this.mockMvc.perform(delete("/api/eliminafattura/{id}","1")).andExpect(status().isOk());
+       
+    }
+	
+	@Test
+    @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
+    public void ricercaPerClienteUtenteAutenticato() throws Exception {
+        this.mockMvc.perform(get("/api/ricercapercliente/{cliente}","Ferrari")).andExpect(status().isOk());
        
     }
 	

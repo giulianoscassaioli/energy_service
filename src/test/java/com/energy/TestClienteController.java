@@ -1,6 +1,7 @@
 package com.energy;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -38,13 +39,28 @@ public class TestClienteController {
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
-    public void listaAutoriUtenteAutenticato() throws Exception {
+    public void listaClientiUtenteAutenticato() throws Exception {
         this.mockMvc.perform(get("/api/trovatutticlienti")).andExpect(status().isOk());
     }
 	
 	@Test
     @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
-    public void listaAutoreByIdUtenteAutenticato() throws Exception {
+    public void clientiByIdUtenteAutenticato() throws Exception {
+        this.mockMvc.perform(get("/api/trovacliente/id/{id}","1")).andExpect(status().isOk());
+       
+    }
+	
+
+	@Test
+    @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
+    public void eliminaClienteByIdUtenteAutenticato() throws Exception {
+        this.mockMvc.perform(delete("/api/eliminacliente/{id}","1")).andExpect(status().isOk());
+       
+    }
+	
+	@Test
+    @WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
+    public void trovaClienteByIdUtenteAutenticato() throws Exception {
         this.mockMvc.perform(get("/api/trovacliente/id/{id}","1")).andExpect(status().isOk());
        
     }
