@@ -33,6 +33,8 @@ public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	 
 	 Optional<Fattura> findByNumero(Long numero);
 	 
+	 Optional<Fattura> findByClienteId(Long id);
+	 
 	 @Modifying
 	 @Transactional
 	 @Query("DELETE Fattura f WHERE f.id = ?1")

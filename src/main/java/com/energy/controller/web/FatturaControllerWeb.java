@@ -62,6 +62,28 @@ public class FatturaControllerWeb {
 //
 //		}
 	
+	@GetMapping("/aggiornaFattura/{id}")
+	public ModelAndView aggiorna(@PathVariable Long id){
+	
+		Fattura fattura= service.findById(id).get();
+		ModelAndView model=new ModelAndView("aggiornafattura");
+		model.addObject("id", id);
+		model.addObject("fattura", fattura);
+		
+		return model;
+	}
+	
+	@PostMapping("/aggiornaFattura2/{id}")
+	public String aggiorna2(Fattura fattura,Model model, @PathVariable Long id){
+		Fattura f= service.findById(id).get();
+		fattura.setCliente(f.getCliente());
+		fattura.setDataFattura(f.getDataFattura());
+		fattura.setNumero(f.getNumero());
+		  service.update(id, fattura);
+	   return "redirect:/web/fatture/fatture";
+		
+	}
+	
 	@GetMapping("/getbyrangeimporto")
 	public ModelAndView getfatturabyrangeimportoviewadmin(@RequestParam(defaultValue = "0") BigDecimal minimo,
 			@RequestParam(defaultValue = "100000") BigDecimal massimo

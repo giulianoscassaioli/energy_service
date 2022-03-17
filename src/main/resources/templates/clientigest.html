@@ -99,10 +99,10 @@
 							th:field="*{dataUltimoContatto}"></td>
 						<td th:text="${cliente.getFatturatoAnnuale()}"
 							th:field="*{fatturatoAnnuale}"></td>
-						<!-- 						<form method="get" action="#" -->
-						<!-- 							th:action="@{/aggiornaStudente/{matricola}(matricola=${studente.getMatricola()})}"> -->
-						<!-- 							<td><input type="submit" value="Aggiorna"></td> -->
-						<!-- 						</form> -->
+						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get" action="#"
+							th:action="@{/web/clienti/aggiornaCliente/{id}(id=${cliente.getId()})}">
+								<td><input type="submit" value="Aggiorna"></td>
+						</form>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/clienti/eliminaCliente/{id}(id=${cliente.getId()})}">

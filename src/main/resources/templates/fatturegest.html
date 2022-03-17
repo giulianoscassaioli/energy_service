@@ -94,10 +94,10 @@
 						<td th:text="${fattura.getAnno()}"></td>
 						<td th:text="${fattura.getImporto()}"></td>
 						<td th:text="${fattura.getStatoFattura()}"></td>
-						<!-- 						<form method="get" action="#" -->
-						<!-- 							th:action="@{/aggiornaCorso/{codice}(codice=${corso.getCodice()})}"> -->
-						<!-- 							<td><input type="submit" value="Aggiorna"></td> -->
-						<!-- 						</form> -->
+							<form sec:authorize="hasRole('ROLE_ADMIN')" method="get" action="#"
+							  th:action="@{/web/fatture/aggiornaFattura/{id}(id=${fattura.getId()})}">
+									<td><input type="submit" value="Aggiorna"></td>
+							</form>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/fatture/eliminaFattura/{id}(id=${fattura.getId()})}">

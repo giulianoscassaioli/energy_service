@@ -11,11 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.energy.exception.CrmException;
 import com.energy.model.Cliente;
+import com.energy.model.Fattura;
 import com.energy.model.Indirizzo;
 import com.energy.model.TipoCliente;
 import com.energy.repository.ClienteRepository;
@@ -108,7 +111,8 @@ public class ClienteControllerWeb {
 			String cognomeContatto, String telefonoContatto, String emailContatto, String indirizzoSedeOperativa,
 			String indirizzoSedeLegale, @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInserimento,
 			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto, Double fatturatoAnnuale,
-			Pageable page) {
+			Pageable page,Model model) {
+		
 		Indirizzo sedeLegale = new Indirizzo();
 		sedeLegale.setCap(capSedeLegale);
 		sedeLegale.setCivico(Integer.valueOf(civicoSedeLegale));
@@ -137,7 +141,12 @@ public class ClienteControllerWeb {
 		c.setDataInserimento(dataInserimento);
 		c.setDataUltimoContatto(dataUltimoContatto);
 		c.setFatturatoAnnuale(fatturatoAnnuale);
+		try {
 		service.save(c);
+		}catch (CrmException e){
+			model.addAttribute("messaggio",e.getMessage());
+			return "errore";
+		}
 		return "redirect:/web/clienti/clienti";
 	}
 
@@ -146,6 +155,50 @@ public class ClienteControllerWeb {
 		service.delete(id);
 		return "redirect:/web/clienti/clienti";
 
+	}
+	
+	@GetMapping("/aggiornaCliente/{id}")
+	public ModelAndView aggiorna(@PathVariable Long id){
+	
+		Cliente cliente= service.findById(id).get();
+		ModelAndView model=new ModelAndView("aggiornacliente");
+		model.addObject("id", id);
+		model.addObject("cliente", cliente);
+		
+		return model;
+	}
+	
+	@PostMapping("/aggiornaCliente2/{id}")
+	public String aggiorna2(Cliente cliente,Model model, @PathVariable Long id, @RequestParam String localitaSedeOperativa
+			,String capSedeOperativa,
+			String civicoSedeOperativa, String viaSedeOperativa, String localitaSedeLegale, String capSedeLegale,
+			String civicoSedeLegale, String viaSedeLegale){
+		
+		Indirizzo sedeLegale = new Indirizzo();
+		sedeLegale.setCap(capSedeLegale);
+		sedeLegale.setCivico(Integer.valueOf(civicoSedeLegale));
+		sedeLegale.setLocalita(localitaSedeLegale);
+		sedeLegale.setVia(viaSedeLegale);
+		
+		Indirizzo sedeOperativa = new Indirizzo();
+		sedeOperativa.setCap(capSedeOperativa);
+		sedeOperativa.setCivico(Integer.valueOf(civicoSedeOperativa));
+		sedeOperativa.setLocalita(localitaSedeOperativa);
+		sedeOperativa.setVia(viaSedeOperativa);
+		
+		indservice.save(sedeOperativa);
+		indservice.save(sedeLegale);
+		
+		Cliente c= service.findById(id).get();
+		cliente.setIndirizzoSedeLegale(sedeLegale);
+		cliente.setIndirizzoSedeOperativa(sedeOperativa);
+		cliente.setDataInserimento(c.getDataInserimento());
+		cliente.setDataUltimoContatto(c.getDataUltimoContatto());
+		service.update(id, cliente);
+	   
+		  
+		  return "redirect:/web/clienti/clienti";
+		
 	}
 
 }

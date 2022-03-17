@@ -44,7 +44,5 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	Optional<Cliente> findByIndirizzoSedeOperativaId(Long id);
 	
 	Optional<Cliente> findByIndirizzoSedeLegaleId(Long id);
-	
-	
 
 }

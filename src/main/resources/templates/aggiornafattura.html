@@ -6,7 +6,7 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 <meta charset="ISO-8859-1">
-<title>Aggiungi Fattura</title>
+<title>Aggiorna Fattura</title>
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
@@ -25,44 +25,35 @@
 		</ol>
 	</nav>
 	<div id="my" class="container">
-	<form action="#" th:action="@{/web/fatture/salvafattura}"
-		method="post">
-		<h2 style="text-align: center">Aggiungi Fatture</h2>
+	<form action="#" th:action="@{/web/fatture/aggiornaFattura2/{id}(id=${fattura.getId()})}" th:object="${fattura}" method="post">
+		<h2 style="text-align: center">Aggiorna Fattura</h2>
 		<div class="content">
-			<div class="center">
-				<div class="input-group-text">
-					Ragione Sociale Cliente<select name ="ragioneSociale">
-						<div th:each="cliente: ${clienti}">
-							<option th:value="${cliente.ragioneSociale}" th:text="${cliente.ragioneSociale}"></option>
-						</div>
-					</select>
-				</div>
-
-				<div class="input-group-text">
-					<span class="input-group-text">Data Fattura</span> <input type=date
-						name="data" class="form-control" placeholder="Data" required>
-				</div>
+          <div class="center">
+<!-- 				<div class="input-group-text"> -->
+<!-- 					<span class="input-group-text">Data Fattura</span> <input type=date -->
+<!-- 						name="data" class="form-control" placeholder="Data" th:field="*{dataFattura}"required> -->
+<!-- 				</div> -->
 
 				<div class="input-group-text">
 					<span class="input-group-text">Numero Fattura</span> <input
-						name="numero" class="form-control" placeholder="Numero Fattura" required>
+						name="numero" class="form-control" placeholder="Numero Fattura" th:field="*{numero}" disabled>
 				</div>
 
 				<div class="input-group-text">
 					<span class="input-group-text">Anno Fattura</span> <input
-						name="anno" class="form-control" placeholder="Anno" required>
+						name="anno" class="form-control" placeholder="Anno" th:field="*{anno}" required>
 				</div>
 
 				<div class="input-group-text">
 					<span class="input-group-text">Importo</span> <input name="importo"
-						class="form-control" placeholder="Importo" required>
+						class="form-control" placeholder="Importo" th:field="*{importo}" required>
 				</div>
 
 				<div class="input-group-text">
 					<span class="input-group-text">Stato Fattura</span> <input
-						name="stato" class="form-control" placeholder="Stato Fattura" required>
+						name="stato" class="form-control" placeholder="Stato Fattura" th:field="*{statoFattura}" required>
 				</div>
-				<input type="submit" id="submitButton" th:value="Save"> <input
+				<input type="submit" id="submitButton" th:value="Aggiorna"> <input
 					type="reset" id="resetButton" name="reset" th:value="Reset" />
 			</div>
 		</div>
