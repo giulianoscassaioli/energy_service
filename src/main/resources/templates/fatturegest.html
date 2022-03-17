@@ -11,8 +11,9 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Energy Service </a>
-		<span sec:authorize="isAuthenticated()" style="color:white" sec:authentication="name">username</span> 
+		<a class="navbar-brand" href="#">Energy Service </a> <span
+			sec:authorize="isAuthenticated()" style="color: white"
+			sec:authentication="name">username</span>
 	</nav>
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
@@ -25,8 +26,9 @@
 	</nav>
 	<hr>
 	<h2>Ricerca</h2>
-	<div class="filtri d-flex flex-nowrap justify-content-around">
-		<div class="type-details w-auto">
+	<div class="filtri d-flex flex-wrap justify-content-around">
+
+		<div class="filtro1 type-details w-auto ">
 			<form action="/web/fatture/getbycliente" method="GET">
 				<div class="form-label mb-4 form-group">
 					<label for="floatingInput2">Ricerca per Ragione Sociale</label>
@@ -39,7 +41,8 @@
 			</form>
 		</div>
 
-		<div class="type-details w-auto">
+
+		<div class="type-details w-auto ">
 			<form action="/web/fatture/getbydata" method="GET">
 				<div class="form-label mb-4 form-group">
 					<label for="floatingInput3">Ricerca per Data</label>
@@ -50,7 +53,10 @@
 					</div>
 				</div>
 			</form>
+
 		</div>
+
+
 		<div class="type-details w-auto">
 			<form action="/web/fatture/getbyrangeimporto" method="GET">
 				<div class="form-label mb-4 form-group">
@@ -66,8 +72,8 @@
 				</div>
 			</form>
 		</div>
-
 	</div>
+
 	<div class="text-center">
 		<form action="/web/fatture/fatture" method="GET">
 			<button class="btn btn-info" type="submit">Tutte le Fatture</button>
@@ -94,10 +100,11 @@
 						<td th:text="${fattura.getAnno()}"></td>
 						<td th:text="${fattura.getImporto()}"></td>
 						<td th:text="${fattura.getStatoFattura()}"></td>
-							<form sec:authorize="hasRole('ROLE_ADMIN')" method="get" action="#"
-							  th:action="@{/web/fatture/aggiornaFattura/{id}(id=${fattura.getId()})}">
-									<td><input type="submit" value="Aggiorna"></td>
-							</form>
+						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
+							action="#"
+							th:action="@{/web/fatture/aggiornaFattura/{id}(id=${fattura.getId()})}">
+							<td><input type="submit" value="Aggiorna"></td>
+						</form>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/fatture/eliminaFattura/{id}(id=${fattura.getId()})}">
@@ -111,34 +118,37 @@
 		</div>
 	</div>
 	<nav aria-label="Pagination" th:if="${fatture.totalPages gt 0}">
-    <ul class="pagination justify-content-center font-weight-bold">
-        <li class="page-item" th:classappend="${fatture.number eq 0} ? 'disabled'">
-            <a class="page-link"
-               th:href="@{/web/fatture/fatture?pageNumber={id}(id=${fatture.number lt 2 ? 1 : fatture.number})}"
-               aria-label="Previous" title="Previous Page" data-toggle="tooltip">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item" th:classappend="${i eq fatture.number + 1} ? 'active'"
-            th:each="i : ${#numbers.sequence( 1, fatture.totalPages, 1)}">
-            <a class="page-link" th:href="@{/web/fatture/fatture?pageNumber={id}(id=${i})}" th:text="${i}"
-               th:title="${'Page '+ i}" data-toggle="tooltip"></a>
-        </li>
-        <li class="page-item" th:classappend="${fatture.number + 1 eq fatture.totalPages} ? 'disabled'">
-            <a class="page-link"
-               th:href="@{/web/fatture/fatture?pageNumber={id}(id=${fatture.number + 2})}"
-               aria-label="Next" title="Next Page" data-toggle="tooltip">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+		<ul class="pagination justify-content-center font-weight-bold">
+			<li class="page-item"
+				th:classappend="${fatture.number eq 0} ? 'disabled'"><a
+				class="page-link"
+				th:href="@{/web/fatture/fatture?pageNumber={id}(id=${fatture.number lt 2 ? 1 : fatture.number})}"
+				aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+					<span aria-hidden="true">&laquo;</span>
+			</a></li>
+			<li class="page-item"
+				th:classappend="${i eq fatture.number + 1} ? 'active'"
+				th:each="i : ${#numbers.sequence( 1, fatture.totalPages, 1)}">
+				<a class="page-link"
+				th:href="@{/web/fatture/fatture?pageNumber={id}(id=${i})}"
+				th:text="${i}" th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+			</li>
+			<li class="page-item"
+				th:classappend="${fatture.number + 1 eq fatture.totalPages} ? 'disabled'">
+				<a class="page-link"
+				th:href="@{/web/fatture/fatture?pageNumber={id}(id=${fatture.number + 2})}"
+				aria-label="Next" title="Next Page" data-toggle="tooltip"> <span
+					aria-hidden="true">&raquo;</span>
+			</a>
+			</li>
+		</ul>
+	</nav>
 	<div class="text-center">
 		<!-- 		<a href="#" class="btn btn-info" th:href="@{/corsoAggiungi}">AggiungiCorso</a>  -->
 		<a href="#" class="btn btn-info" th:href="@{/web/clienti/homeclienti}">Torna
-			alla home</a>
-	    </a> <a sec:authorize="hasRole('ROLE_ADMIN')" href="#" class="btn btn-info"
-			th:href="@{/web/fatture/aggiungifattura}">Aggiungi Fattura</a>
+			alla home</a> </a> <a sec:authorize="hasRole('ROLE_ADMIN')" href="#"
+			class="btn btn-info" th:href="@{/web/fatture/aggiungifattura}">Aggiungi
+			Fattura</a>
 	</div>
 
 	<div class="footer bg-secondary p-2 text-center mt-2">
