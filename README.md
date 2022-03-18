@@ -47,11 +47,10 @@ Latest stable version: 1.0
 
 For the submission of a this app I decided to implement a REST interface for sending data. The output of the service will be the printing of the cart.
 
-<br>
 Examples of JSON to insert into the BODY of the POST Request to save a new Client:
 
-
-{
+ ``` 
+ {
   "id":0,
   "ragioneSociale": "string1",
   "partitaIva": "string1",
@@ -102,7 +101,7 @@ Examples of JSON to insert into the BODY of the POST Request to save a new Clien
   "fatturatoAnnuale": 0
   
 }
-
+```
 ## Testing
 
 For the test I used Junit, testing all the critical modules of the system, both with unit tests on low level components and with black box tests of high level. 
