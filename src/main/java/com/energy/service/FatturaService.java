@@ -79,8 +79,6 @@ public class FatturaService {
 	public void deleteById(Long id) {
 		Optional<Fattura> fat =fatturaRepository.findById(id);
 		if(fat.isPresent()) {
-//			fat.get().setCliente(null);
-//			fatturaRepository.saveAndFlush(fat.get());
 			fatturaRepository.deleteByIdWithJPQL(fat.get().getId());
 		}
 	}

@@ -13,7 +13,11 @@
 - [License](#License)
 
 ## Introduction and Technologies stack
-This is an application to manage a Shopping Cart with products, coupons and taxes. 
+This is an application to manage a invoces and clients.
+The User can Login with the signUp function and havig the list of all the clients
+and their invoces and have different ways of looking for them within the application.
+Login in with the Username "adimn" and password "admin" gives the user extra-privileges
+such us deleting a client or an invoice, updating them or saving new ones in the system.
 
 ### Tech stack: 
 - Java + Spring Boot

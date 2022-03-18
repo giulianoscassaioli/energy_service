@@ -87,7 +87,7 @@ public class ApplicationStartupRunner implements CommandLineRunner {
 			Provincia provincia;
 			while ((values = csvReader.readNext()) != null) {
                 
-				//Optional<Provincia> provincia1 = provinciaRepository.findByNome(values[3]);
+				
 				Optional<Provincia> provincia1 = provinciaRepository.findByNomeLike("%"+values[3]+"%");
                 if(provincia1.isPresent()) {
 				Comune comune= new Comune();
