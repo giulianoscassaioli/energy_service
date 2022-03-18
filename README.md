@@ -48,7 +48,7 @@ Latest stable version: 1.0
 For the submission of a this app I decided to implement a REST interface for sending data. The output of the service will be the printing of the cart.
 
 <br>
-Examples of JSON to insert into the BODY of the request:
+Examples of JSON to insert into the BODY of the request for a POST Request to insert a new Client:
 
 
 {
