@@ -13,10 +13,10 @@
 - [License](#License)
 
 ## Introduction and Technologies stack
-This is an application to manage a invoces and clients.
-The User can Login with the signUp function and havig the list of all the clients
+This is a CRM application to manage clients and their invoces.
+The User can Login with the signUp function and viewing the list of all the clients
 and their invoces and have different ways of looking for them within the application.
-Login in with the Username "adimn" and password "admin" gives the user extra-privileges
+Loging in with the Username "admin" and password "admin" gives the user extra-privileges
 such us deleting a client or an invoice, updating them or saving new ones in the system.
 
 ### Tech stack: 
