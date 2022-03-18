@@ -126,17 +126,3 @@ Java:
 
 ## License
 MIT ©
-
-
-## External Resources
-IDE:  
-- Eclipse
-
-Heroku service:  
-- https://www.heroku.com/
-
-Java:  
-- https://spring.io/
-
-## License
-MIT ©
