@@ -45,7 +45,7 @@ Latest stable version: 1.0
 
 ## Input / Output
 
-For the submission of a this app I decided to implement a REST interface for sending data. The output of the service will be the printing of the cart.
+For the submission of a this app I decided to implement a REST interface for sending data. The output of the service will be the printing of the Client.
 
 Examples of JSON to insert into the BODY of the POST Request to save a new Client:
 
