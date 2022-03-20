@@ -187,7 +187,7 @@ public class ClienteControllerWeb {
 		int civicoLegale = cliente.getIndirizzoSedeLegale().getCivico();
 		String capLegale = cliente.getIndirizzoSedeLegale().getCap();
 		String comuneLeg =cliente.getIndirizzoSedeLegale().getComune().getNome();
-	    System.out.println(cliente.getDataUltimoContatto());
+	    
 		
 		//Optional<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
 		List<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
