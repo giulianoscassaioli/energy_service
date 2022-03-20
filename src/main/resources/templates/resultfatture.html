@@ -48,7 +48,7 @@
 					<label for="floatingInput3">Ricerca per Data</label>
 					<div class="d-flex">
 						<input type="date" class="form-control" name="data"
-							id="floatingInput3" placeholder="Fatturato" required> <input
+							id="floatingInput3" placeholder="Fatturato"> <input
 							type="submit" value="Cerca">
 					</div>
 				</div>
@@ -117,40 +117,32 @@
 			</table>
 		</div>
 	</div>
-	<nav aria-label="Pagination" th:if="${totalPages gt 0}">
-	<ul class="pagination justify-content-center font-weight-bold"> 
-		<li class="page-item"><a th:each="i:${#numbers.sequence(0, totalPages-1)}"
-			th:href="@{?pageNumber={n}(n=${i})}"><span th:text="${i+1}"></span>	
-		</a></li>
-	</ul> 
+	<nav aria-label="Pagination" th:if="${fatture.totalPages gt 0}">
+		<ul class="pagination justify-content-center font-weight-bold">
+			<li class="page-item"
+				th:classappend="${fatture.number eq 0} ? 'disabled'"><a
+				class="page-link"
+				th:href="@{?pageNumber={id}(id=${fatture.number lt 2 ? 1 : fatture.number})}"
+				aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+					<span aria-hidden="true">&laquo;</span>
+			</a></li>
+			<li class="page-item"
+				th:classappend="${i eq fatture.number + 1} ? 'active'"
+				th:each="i : ${#numbers.sequence( 1, fatture.totalPages, 1)}">
+				<a class="page-link"
+				th:href="@{?pageNumber={id}(id=${i})}"
+				th:text="${i}" th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+			</li>
+			<li class="page-item"
+				th:classappend="${fatture.number + 1 eq fatture.totalPages} ? 'disabled'">
+				<a class="page-link"
+				th:href="@{?pageNumber={id}(id=${fatture.number + 2})}"
+				aria-label="Next" title="Next Page" data-toggle="tooltip"> <span
+					aria-hidden="true">&raquo;</span>
+			</a>
+			</li>
+		</ul>
 	</nav>
-<!-- 	<nav aria-label="Pagination" th:if="${totalPages gt 0}"> -->
-<!-- 		<ul class="pagination justify-content-center font-weight-bold"> -->
-<!-- 			<li class="page-item" -->
-<!-- 				th:classappend="${fatture.number eq 0} ? 'disabled'"><a -->
-<!-- 				class="page-link" -->
-<!-- 				th:href="@{?pageNumber={id}(id=${fatture.number lt 2 ? 1 : fatture.number})}" -->
-<!-- 				aria-label="Previous" title="Previous Page" data-toggle="tooltip"> -->
-<!-- 					<span aria-hidden="true">&laquo;</span> -->
-<!-- 			</a></li> -->
-<!-- 			<li class="page-item" -->
-<!-- 				th:classappend="${i eq fatture.number + 1} ? 'active'" -->
-<!-- 				th:each="i : ${#numbers.sequence( 1, totalPages, 1)}"> -->
-<!-- 				<a class="page-link" -->
-<!-- 				th:href="@{?pageNumber={id}(id=${i})}" -->
-<!-- 				th:text="${i}" th:title="${'Page '+ i}" data-toggle="tooltip"></a> -->
-<!-- 			</li> -->
-<!-- 			<li class="page-item" -->
-<!-- 				th:classappend="${fatture.number + 1 eq totalPages} ? 'disabled'"> -->
-<!-- 				<a class="page-link" -->
-<!-- 				th:href="@{?pageNumber={id}(id=${fatture.number + 2})}" -->
-<!-- 				aria-label="Next" title="Next Page" data-toggle="tooltip"> <span -->
-<!-- 					aria-hidden="true">&raquo;</span> -->
-<!-- 			</a> -->
-<!-- 			</li> -->
-<!-- 		</ul> -->
-<!-- 	</nav> -->
- 
 	<div class="text-center">
 		<a href="#" class="btn btn-info" th:href="@{/web/clienti/homeclienti}">Torna
 			alla home</a> </a> <a sec:authorize="hasRole('ROLE_ADMIN')" href="#"

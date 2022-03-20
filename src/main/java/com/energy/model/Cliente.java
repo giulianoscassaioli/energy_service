@@ -82,5 +82,6 @@ public class Cliente {
 		this.dataUltimoContatto = dataUltimoContatto;
 		this.fatturatoAnnuale = fatturatoAnnuale;
 	}
+	
 
 }

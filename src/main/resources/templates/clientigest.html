@@ -73,7 +73,9 @@
 					<th>Pec</th>
 					<th>Telefono</th>
 					<th>Indirizzo Sede Operativa</th>
+					<th>Comune Sede Operativa</th>
 					<th>Indirizzo Sede Legale</th>
+					<th>Comune Sede Legale</th>
 					<th>Data Inserimento</th>
 					<th>Data Ultimo Contatto</th>
 					<th>Fatturato Annuale</th>
@@ -89,9 +91,13 @@
 						<td th:text="${cliente.getEmail()}" th:field="*{email}"></td>
 						<td th:text="${cliente.getPec()}" th:field="*{pec}"></td>
 						<td th:text="${cliente.getTelefono}" th:field="*{telefono}"></td>
-						<td th:text="${cliente.getIndirizzoSedeOperativa().getVia()}"
+						<td th:text="${cliente.getIndirizzoSedeOperativa().getVia() + cliente.getIndirizzoSedeOperativa().getCivico()}"
 							th:field="*{via}"></td>
-						<td th:text="${cliente.getIndirizzoSedeLegale().getVia()}"
+					    <td th:text="${cliente.getIndirizzoSedeOperativa().getComune().getNome()}"
+							th:field="*{via}"></td>
+						<td th:text="${cliente.getIndirizzoSedeLegale().getVia() + cliente.getIndirizzoSedeLegale().getCivico()}"
+							th:field="*{via}"></td>
+						<td th:text="${cliente.getIndirizzoSedeLegale().getComune().getNome()}"
 							th:field="*{via}"></td>
 						<td th:text="${cliente.getDataInserimento()}"
 							th:field="*{dataInserimento}"></td>

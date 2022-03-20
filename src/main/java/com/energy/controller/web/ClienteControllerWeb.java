@@ -1,6 +1,8 @@
 package com.energy.controller.web;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,6 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +21,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.energy.exception.CrmException;
 import com.energy.model.Cliente;
+import com.energy.model.Comune;
 import com.energy.model.Fattura;
 import com.energy.model.Indirizzo;
 import com.energy.model.TipoCliente;
 import com.energy.repository.ClienteRepository;
+import com.energy.repository.ComuneRepository;
 import com.energy.repository.IndirizzoRepository;
 import com.energy.service.ClienteService;
 import com.energy.service.IndirizzoService;
@@ -35,6 +40,9 @@ public class ClienteControllerWeb {
 
 	@Autowired
 	ClienteRepository repository;
+	
+	@Autowired
+	ComuneRepository comuneRepository;
 
 	@Autowired
 	IndirizzoRepository ind;
@@ -92,13 +100,14 @@ public class ClienteControllerWeb {
 	}
 
 	@GetMapping("/aggiungicliente")
-	public String salvaCliente() {
-
+	public String salvaCliente(Model model) {
+     List<Comune> comuni= comuneRepository.findByOrderByNome();
+     model.addAttribute("comuni", comuni);
 		return "salvacliente";
 	}
 
 	@GetMapping("/salvacliente")
-	public String saveCliente(@RequestParam String localitaSedeOperativa, String capSedeOperativa,
+	public String saveCliente(@RequestParam(required = false) String comuneSedeOperativa,String comuneSedeLegale, String capSedeOperativa,
 			String civicoSedeOperativa, String viaSedeOperativa, String localitaSedeLegale, String capSedeLegale,
 			String civicoSedeLegale, String viaSedeLegale, String ragioneSociale, String partitaIva,
 			TipoCliente tipoCliente, String email, String pec, String telefono, String nomeContatto,
@@ -106,19 +115,25 @@ public class ClienteControllerWeb {
 			String indirizzoSedeLegale,
 			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto, Double fatturatoAnnuale,
 			Pageable page,Model model) {
-		
+	
+		Comune comuneSOp=comuneRepository.findByNome(comuneSedeOperativa).get(0);
 		Indirizzo sedeLegale = new Indirizzo();
 		sedeLegale.setCap(capSedeLegale);
 		sedeLegale.setCivico(Integer.valueOf(civicoSedeLegale));
 		sedeLegale.setLocalita(localitaSedeLegale);
 		sedeLegale.setVia(viaSedeLegale);
+		sedeLegale.setComune(comuneSOp);
+		
+		Comune comuneSLegale=comuneRepository.findByNome(comuneSedeLegale).get(0);
 		Indirizzo sedeOperativa = new Indirizzo();
 		sedeOperativa.setCap(capSedeOperativa);
 		sedeOperativa.setCivico(Integer.valueOf(civicoSedeOperativa));
-		sedeOperativa.setLocalita(localitaSedeOperativa);
+		sedeOperativa.setComune(comuneSLegale);
 		sedeOperativa.setVia(viaSedeOperativa);
+		
 		indservice.save(sedeOperativa);
 		indservice.save(sedeLegale);
+		
 		Cliente c = new Cliente();
 		c.setRagioneSociale(ragioneSociale);
 		c.setPartitaIva(partitaIva);
@@ -156,6 +171,8 @@ public class ClienteControllerWeb {
 	
 		Cliente cliente= service.findById(id).get();
 		ModelAndView model=new ModelAndView("aggiornacliente");
+		List<Comune> comuni= comuneRepository.findByOrderByNome();
+	    model.addObject("comuni", comuni);
 		model.addObject("id", id);
 		model.addObject("cliente", cliente);
 		
@@ -163,32 +180,62 @@ public class ClienteControllerWeb {
 	}
 	
 	@PostMapping("/aggiornaCliente2/{id}")
-	public String aggiorna2(Cliente cliente,Model model, @PathVariable Long id, @RequestParam String localitaSedeOperativa
-			,String capSedeOperativa,
-			String civicoSedeOperativa, String viaSedeOperativa, String localitaSedeLegale, String capSedeLegale,
-			String civicoSedeLegale, String viaSedeLegale,
-			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto){
+	public String aggiorna2(@ModelAttribute("cliente")Cliente cliente,Model model, @PathVariable Long id/*,/* @RequestParam (required = false)
+			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto*/){
 		
-		Indirizzo sedeLegale = new Indirizzo();
-		sedeLegale.setCap(capSedeLegale);
-		sedeLegale.setCivico(Integer.valueOf(civicoSedeLegale));
-		sedeLegale.setLocalita(localitaSedeLegale);
-		sedeLegale.setVia(viaSedeLegale);
+		String viaLegale = cliente.getIndirizzoSedeLegale().getVia();
+		int civicoLegale = cliente.getIndirizzoSedeLegale().getCivico();
+		String capLegale = cliente.getIndirizzoSedeLegale().getCap();
+		String comuneLeg =cliente.getIndirizzoSedeLegale().getComune().getNome();
+	    System.out.println(cliente.getDataUltimoContatto());
 		
-		Indirizzo sedeOperativa = new Indirizzo();
-		sedeOperativa.setCap(capSedeOperativa);
-		sedeOperativa.setCivico(Integer.valueOf(civicoSedeOperativa));
-		sedeOperativa.setLocalita(localitaSedeOperativa);
-		sedeOperativa.setVia(viaSedeOperativa);
+		//Optional<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
+		List<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
+		//if(indirizzoLegale.isPresent()) {
+		if(!indirizzoLegale.isEmpty()) {	
+			cliente.setIndirizzoSedeLegale(indirizzoLegale.get(0));
+		} else {
+			Indirizzo indirizzoLeg = new Indirizzo();
+			indirizzoLeg.setCap(capLegale);
+			indirizzoLeg.setCivico(civicoLegale);
+			indirizzoLeg.setVia(viaLegale);
+			System.out.println(cliente.getIndirizzoSedeLegale().getComune().getId());
+			Comune comuneLegale = comuneRepository.findById(cliente.getIndirizzoSedeLegale().getComune().getId()).get();
+			indirizzoLeg.setComune(comuneLegale);
+			ind.save(indirizzoLeg);
+			cliente.setIndirizzoSedeLegale(indirizzoLeg);
+		}
+	
+		String viaOperativa = cliente.getIndirizzoSedeOperativa().getVia();
+		int civicoOperativa = cliente.getIndirizzoSedeOperativa().getCivico();
+		String capOperativa = cliente.getIndirizzoSedeOperativa().getCap();
+		String comuneOp =cliente.getIndirizzoSedeOperativa().getComune().getNome();
+		String localitaOperativa = cliente.getIndirizzoSedeOperativa().getLocalita();
 		
-		indservice.save(sedeOperativa);
-		indservice.save(sedeLegale);
-		
+		//Optional<Indirizzo> indirizzoOperativa= ind.findByViaAndCivicoAndCapAndComuneNome(viaOperativa, civicoOperativa, capOperativa, comuneOp);
+		List<Indirizzo> indirizzoOperativa=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneOp);
+		//if(indirizzoOperativa.isPresent()) {
+		if(!indirizzoOperativa.isEmpty()) {
+			cliente.setIndirizzoSedeOperativa(indirizzoOperativa.get(0));
+		} else {
+			Indirizzo indirizzoOpe = new Indirizzo();
+			indirizzoOpe.setCap(capOperativa);
+			indirizzoOpe.setCivico(civicoOperativa);
+			indirizzoOpe.setLocalita(localitaOperativa);
+			indirizzoOpe.setVia(viaOperativa);
+			System.out.println(cliente.getIndirizzoSedeOperativa().getComune().getId());
+			Comune comuneOperativa = comuneRepository.findById(cliente.getIndirizzoSedeOperativa().getComune().getId()).get();
+	
+			indirizzoOpe.setComune(comuneOperativa);
+			ind.save(indirizzoOpe);
+			cliente.setIndirizzoSedeOperativa(indirizzoOpe);
+		}
+	
+		cliente.setId(id);
+
 		Cliente c= service.findById(id).get();
-		cliente.setIndirizzoSedeLegale(sedeLegale);
-		cliente.setIndirizzoSedeOperativa(sedeOperativa);
-		cliente.setDataInserimento(c.getDataInserimento());
-		cliente.setDataUltimoContatto(dataUltimoContatto);
+
+	    cliente.setDataInserimento(c.getDataInserimento());
 		
 		try {
 		service.update(id, cliente);

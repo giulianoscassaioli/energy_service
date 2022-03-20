@@ -2,6 +2,7 @@ package com.energy.controller.web;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -73,14 +74,21 @@ public class FatturaControllerWeb {
 	   return "redirect:/web/fatture/fatture";
 		
 	}
-	
+	//
 	@GetMapping("/getbyrangeimporto")
-	public ModelAndView getfatturabyrangeimportoviewadmin(@RequestParam(defaultValue = "0") BigDecimal minimo,
+	public ModelAndView getfatturabyrangeimportoviewadmin(Pageable page,@RequestParam(defaultValue = "0") BigDecimal minimo,
 			@RequestParam(defaultValue = "100000") BigDecimal massimo
-			, Integer size, @RequestParam(required = false, defaultValue = "1")Integer pageNo
-			,Pageable page) {
+			, Integer size,@RequestParam(defaultValue = "0") Integer pageNumber) {
 		ModelAndView myModel=new ModelAndView();
-		Page<Fattura> list = service.findByRangeImporto(minimo, massimo, page.withPage(pageNo-1));
+		Pageable pageable = PageRequest.of(pageNumber,10);
+		Page<Fattura> list = service.findByRangeImporto(minimo, massimo, pageable);
+		int totalPages = list.getTotalPages();
+	    long totalItems = list.getTotalElements();
+	    List<Fattura> fatture = list.getContent();
+	    myModel.addObject("currentPage", pageNumber);
+	    myModel.addObject("totalPages", totalPages);
+	    myModel.addObject("totalItems", totalItems);
+
 		myModel.addObject("fatture", list);
 		myModel.setViewName("fatturegest");
 		return myModel;
@@ -88,38 +96,62 @@ public class FatturaControllerWeb {
 		}
 	
 	@GetMapping("/getbydata")
-	public ModelAndView getfatturabydata(@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate data,
-			@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "50") Integer size) {
+	public ModelAndView getfatturabydata(Pageable page, @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate data,
+			@RequestParam(defaultValue = "0") Integer pageNumber, @RequestParam(defaultValue = "50") Integer size) {
+
 		ModelAndView myModel=new ModelAndView();
-		Pageable pag = PageRequest.of(page, size);
+		Pageable pag = PageRequest.of(pageNumber, size);
 		Page<Fattura> list = service.findByData(data, pag);
+		int totalPages = list.getTotalPages();
+	    long totalItems = list.getTotalElements();
+	    myModel.addObject("currentPage", pageNumber);
+	    myModel.addObject("totalPages", totalPages);
+	    myModel.addObject("totalItems", totalItems);
 		myModel.addObject("fatture", list);
+		myModel.addObject("totalPages",list.getTotalPages());
 		myModel.setViewName("fatturegest");
 		return myModel;
 	}
 	
+	
 	@GetMapping("/getbycliente")
-	public ModelAndView getfatturabyclienteviewadmin(@RequestParam String cliente,
-			@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "50") Integer size) {
+	public ModelAndView getfatturabyclienteviewadmin(@RequestParam(required = false)String cliente,
+			@RequestParam(defaultValue = "0") Integer pageNumber, @RequestParam(defaultValue = "50") Integer size) {
 		ModelAndView myModel = new ModelAndView();
-		Pageable pag = PageRequest.of(page, size);
+		Pageable pag = PageRequest.of(pageNumber, 10);
 		Page<Fattura> list = service.findByCliente(cliente, pag);
+		int totalPages = list.getTotalPages();
+		int currentPage= list.getNumber();
+//		if(totalPages==0) {
+//			totalPages=1;
+//		}
+	    long totalItems = list.getTotalElements();
+	    myModel.addObject("currentPage", currentPage);
+	    myModel.addObject("totalPages", totalPages);
+	    myModel.addObject("totalItems", totalItems);
 		myModel.addObject("fatture", list);
 		myModel.setViewName("fatturegest");
 		return myModel;
 	}
 	
 	@GetMapping("/fatture")
-	public ModelAndView viewFatture(Pageable page,@RequestParam(required = false, defaultValue = "1") Integer pageNumber
+	public ModelAndView viewFatture(Pageable page,@RequestParam(required = false, defaultValue = "0") Integer pageNumber
 			, Integer size) {
 		ModelAndView model = new ModelAndView();
-		Page<Fattura> find= service.findAllFatture(page.withPage(pageNumber -1));
-		model.addObject("currentPage", pageNumber);
+		Pageable pageable = PageRequest.of(pageNumber,10);
+		Page<Fattura> find= service.findAllFatture(pageable);
+		int totalPages = find.getTotalPages();
+	    long totalItems = find.getTotalElements();
+	    model.addObject("currentPage", pageNumber);
+	    model.addObject("totalPages", totalPages);
+	    model.addObject("totalItems", totalItems);
 		model.addObject("fatture", find);
+		model.addObject("totalPages",find.getTotalPages());
 		model.setViewName("fatturegest");
 		return model;
 
 	}
+	
 	
 	
 	@GetMapping("/eliminaFattura/{id}")

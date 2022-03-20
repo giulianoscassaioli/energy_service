@@ -64,7 +64,7 @@
 
 					<div class="input-group-text">
 						<span class="input-group-text">Pec</span> <input name="pec" th:field="*{pec}"
-							 type="email" class="form-control" placeholder="Pec" required>
+							 type="email" class="form-control" placeholder="Pec">
 					</div>
 
 					<div class="input-group-text">
@@ -75,56 +75,60 @@
 					<div class="input-group-text">
 						<span class="input-group-text">Telefono Contatto</span> <input th:field="*{telefonoContatto}"
 							name="telefonoContatto" class="form-control" pattern="^[0-9]+$"
-							placeholder="Telefono Contatto" required>
+							placeholder="Telefono Contatto">
 					</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Email Contatto</span> <input
 							type="email" name="emailContatto" class="form-control" th:field="*{emailContatto}"
-							placeholder="Email Contatto" required>
+							placeholder="Email Contatto">
 					</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Via Sede Operativa</span> <input
-							name="viaSedeOperativa" class="form-control"
+							name="viaSedeOperativa" class="form-control" th:field="*{indirizzoSedeOperativa.via}"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Civico Sede Operativa</span> <input
-							name="civicoSedeOperativa" class="form-control"
+							name="civicoSedeOperativa" class="form-control" th:field="*{indirizzoSedeOperativa.civico}"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Cap Sede Operativa</span> <input
-							name="capSedeOperativa" class="form-control"
-							placeholder="Indirizzo Sede Operativa" required>
+							name="capSedeOperativa" class="form-control" th:field="*{indirizzoSedeOperativa.cap}"
+							placeholder="Cap Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Localita Sede Operativa</span> <input 
-							name="localitaSedeOperativa" class="form-control"
-							placeholder="Indirizzo Sede Operativa" required>
-					</div>
+					Comune Sede Operativa<select th:field="*{indirizzoSedeOperativa.comune}">
+						<div th:each="comune: ${comuni}">
+							<option th:value="${comune.id}" th:text="${comune.nome}"></option>
+						</div>
+					</select>
+				</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Via Sede Legale</span> <input 
+						<span class="input-group-text">Via Sede Legale</span> <input th:field="*{indirizzoSedeLegale.via}"
 							name="viaSedeLegale" class="form-control"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Civico Sede Legale</span> <input 
+						<span class="input-group-text">Civico Sede Legale</span> <input th:field="*{indirizzoSedeLegale.civico}"
 							name="civicoSedeLegale" class="form-control"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cap Sede Legale</span> <input 
+						<span class="input-group-text">Cap Sede Legale</span> <input  th:field="*{indirizzoSedeLegale.cap}"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Localita Sede Legale</span> <input 
-							name="localitaSedeLegale" class="form-control"
-							placeholder="Indirizzo Sede Legale" required>
-					</div>
+					Comune Sede Legale<select th:field="*{indirizzoSedeLegale.comune}">
+						<div th:each="comune: ${comuni}">
+							<option th:value="${comune.id}" th:text="${comune.nome}"></option>
+						</div>
+					</select>
+				</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Data Ultimo Contatto</span> <input
+						<span class="input-group-text">Data Ultimo Contatto</span> <input th:field="*{dataUltimoContatto}"
 							type="date" pattern="yyyy-MM-dd" name="dataUltimoContatto" class="form-control"
-							placeholder="Data Ultimo Contatto" required>
+							placeholder="Data Ultimo Contatto"  required>
 					</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Fatturato Annuale</span> <input th:field="*{fatturatoAnnuale}"

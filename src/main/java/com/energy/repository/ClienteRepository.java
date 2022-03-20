@@ -23,6 +23,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
 	boolean existsByPec(String pec);
 	
+	boolean existsById(Long id);
+	
 	Page<Cliente> findByOrderByRagioneSociale(Pageable pageable);
 	
 	Page<Cliente> findByOrderByFatturatoAnnuale(Pageable page);
@@ -44,5 +46,14 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	Optional<Cliente> findByIndirizzoSedeOperativaId(Long id);
 	
 	Optional<Cliente> findByIndirizzoSedeLegaleId(Long id);
+	
+	Optional<Cliente> findByEmail(String email);
+	
+	Optional<Cliente> findByTelefono(String telefono);
+	
+	Optional<Cliente> findByPartitaIva(String partitaIva);
+	
+	Optional<Cliente> findByPec(String pec);
+
 
 }

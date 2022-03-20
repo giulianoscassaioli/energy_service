@@ -26,7 +26,7 @@ public class Fattura {
 	private Long id;
 	
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)//specifica la cardinalita delle relazioni
 	private Cliente cliente;
 	
 	

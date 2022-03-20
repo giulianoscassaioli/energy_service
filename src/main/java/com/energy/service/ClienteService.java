@@ -95,7 +95,10 @@ public class ClienteService {
 	public Cliente update(Long id, Cliente c) {
 		
 		if(clienteRepository.existsByEmail(c.getEmail())) {
-			throw new CrmException("Esiste gia un cliente con questa e-mail!");
+			Cliente cliEmail=clienteRepository.findByEmail(c.getEmail()).get();
+			if(id != cliEmail.getId()) {
+			  throw new CrmException("Esiste gia un cliente con questa e-mail!");
+			}
 		}
 		
 		if(!c.getEmail().matches(regex)) {
@@ -103,7 +106,10 @@ public class ClienteService {
 		}
 		
 		if(clienteRepository.existsByTelefono(c.getTelefono())) {
+			Cliente cliEmail=clienteRepository.findByTelefono(c.getTelefono()).get();
+			if(id != cliEmail.getId()) {
 			throw new CrmException("Esiste gia un cliente con questo numero di telefono!");
+			}
 		}
 		
 		if(!controlloCampo(c.getTelefono())) {
@@ -112,11 +118,18 @@ public class ClienteService {
 		
 		
 		if(clienteRepository.existsByPartitaIva(c.getPartitaIva())) {
+			Cliente cliEmail=clienteRepository.findByPartitaIva(c.getPartitaIva()).get();
+			if(id != cliEmail.getId()) {
 			throw new CrmException("Esiste gia un cliente con questa partita iva!");
+			}
+			
 		}
 		
 		if(clienteRepository.existsByPec(c.getPec())) {
+			Cliente cliEmail=clienteRepository.findByPec(c.getPec()).get();
+			if(id != cliEmail.getId()) {
 			throw new CrmException("Esiste gia un cliente con questa pec!");
+			}
 		}
 		
 		if(!c.getPec().matches(regex)) {

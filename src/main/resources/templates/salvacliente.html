@@ -64,7 +64,7 @@
 
 					<div class="input-group-text">
 						<span class="input-group-text">Pec</span> <input name="pec"
-							 type="email" class="form-control" placeholder="Pec" required>
+							 type="email" class="form-control" placeholder="Pec">
 					</div>
 
 					<div class="input-group-text">
@@ -75,13 +75,20 @@
 					<div class="input-group-text">
 						<span class="input-group-text">Telefono Contatto</span> <input
 							name="telefonoContatto" class="form-control" pattern="^[0-9]+$"
-							placeholder="Telefono Contatto" required>
+							placeholder="Telefono Contatto">
 					</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Email Contatto</span> <input
 							type="email" name="emailContatto" class="form-control"
-							placeholder="Email Contatto" required>
+							placeholder="Email Contatto">
 					</div>
+					<div class="input-group-text">
+					Comune Sede Operativa<select name ="comuneSedeOperativa">
+						<div th:each="comune: ${comuni}">
+							<option th:value="${comune.nome}" th:text="${comune.nome}"></option>
+						</div>
+					</select>
+				</div>
 					<div class="input-group-text">
 						<span class="input-group-text">Via Sede Operativa</span> <input
 							name="viaSedeOperativa" class="form-control"
@@ -95,11 +102,6 @@
 					<div class="input-group-text">
 						<span class="input-group-text">Cap Sede Operativa</span> <input
 							name="capSedeOperativa" class="form-control"
-							placeholder="Indirizzo Sede Operativa" required>
-					</div>
-					<div class="input-group-text">
-						<span class="input-group-text">Localita Sede Operativa</span> <input
-							name="localitaSedeOperativa" class="form-control"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
@@ -118,10 +120,12 @@
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Localita Sede Legale</span> <input
-							name="localitaSedeLegale" class="form-control"
-							placeholder="Indirizzo Sede Legale" required>
-					</div>
+					Comune Sede Legale<select name ="comuneSedeLegale">
+						<div th:each="comune: ${comuni}">
+							<option th:value="${comune.nome}" th:text="${comune.nome}"></option>
+						</div>
+					</select>
+				</div>
 
 					<div class="input-group-text">
 						<span class="input-group-text">Data Ultimo Contatto</span> <input

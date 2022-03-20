@@ -73,7 +73,7 @@ public class ApplicationStartupRunner implements CommandLineRunner {
 		roleRepository.save(roleAdmin);
 		roleRepository.save(roleUser);
 		utenteRepository.save(user);
-		
+		//if provincia service . find all . size > 0 per controllo in modalita update
 		initProvincia();
 		initComune();
 
