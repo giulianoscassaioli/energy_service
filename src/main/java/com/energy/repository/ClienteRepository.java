@@ -28,7 +28,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
 	Page<Cliente> findByOrderByRagioneSociale(Pageable pageable);
 	
-	Page<Cliente> findByOrderByFatturatoAnnuale(Pageable page);
+	Page<Cliente> findByOrderByFatturatoTotale(Pageable page);
 	
 	Page<Cliente> findByOrderByDataInserimento(Pageable page);
    
@@ -36,7 +36,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
 	Page<Cliente> findByOrderByIndirizzoSedeLegaleComuneProvinciaNome(Pageable page);
 	
-	Page<Cliente> findByFatturatoAnnuale (Pageable page, BigDecimal fatturato);
+	Page<Cliente> findByFatturatoTotale (Pageable page, BigDecimal fatturato);
 	
 	Page<Cliente> findByDataInserimento (Pageable page, LocalDate data);
 	

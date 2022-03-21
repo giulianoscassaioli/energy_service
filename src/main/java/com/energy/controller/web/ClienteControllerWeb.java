@@ -90,7 +90,7 @@ public class ClienteControllerWeb {
 	public ModelAndView getByfatturato(@RequestParam BigDecimal fatturato, Pageable page,
 			@RequestParam(defaultValue = "0") Integer pageNumber,Integer size) {
 		ModelAndView model = new ModelAndView();
-		Page<Cliente> list = service.findByFatturatoAnnuale(page.withPage(pageNumber), fatturato);
+		Page<Cliente> list = service.findByFatturatoTotale(page.withPage(pageNumber), fatturato);
 		int totalPages = list.getTotalPages();
 	    long totalItems = list.getTotalElements();
 	    model.addObject("currentPage", pageNumber);
@@ -106,7 +106,8 @@ public class ClienteControllerWeb {
 	public ModelAndView getClientiByParteDelNome(Pageable page,
 			@RequestParam(defaultValue = "0") Integer pageNumber,Integer size,String nome) {
 		ModelAndView model = new ModelAndView();
-		Page<Cliente> list = service.findByParteDelNome(nome, page.withPage(pageNumber));
+		page= PageRequest.of(pageNumber, 5);
+		Page<Cliente> list = service.findByParteDelNome(nome,page/* page.withPage(pageNumber)*/);
 		int totalPages = list.getTotalPages();
 	    long totalItems = list.getTotalElements();
 	    model.addObject("currentPage", pageNumber);
@@ -132,7 +133,7 @@ public class ClienteControllerWeb {
 			TipoCliente tipoCliente, String email, String pec, String telefono, String nomeContatto,
 			String cognomeContatto, String telefonoContatto, String emailContatto, String indirizzoSedeOperativa,
 			String indirizzoSedeLegale,
-			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto,BigDecimal /*Double*/ fatturatoAnnuale,
+			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto,BigDecimal fatturatoAnnuale,
 			Pageable page,Model model) {
 	
 		Comune comuneSOp=comuneRepository.findByNome(comuneSedeOperativa).get(0);
@@ -168,7 +169,12 @@ public class ClienteControllerWeb {
 		c.setIndirizzoSedeLegale(sedeLegale);
 		c.setDataInserimento(LocalDate.now());
 		c.setDataUltimoContatto(dataUltimoContatto);
-		c.setFatturatoAnnuale(fatturatoAnnuale);
+		if(fatturatoAnnuale==null) {
+			c.setFatturatoTotale(new BigDecimal("0"));
+		}
+		else {
+			c.setFatturatoTotale(fatturatoAnnuale);
+		}
 		try {
 		service.save(c);
 		}catch (CrmException e){
@@ -252,7 +258,7 @@ public class ClienteControllerWeb {
 		Cliente c= service.findById(id).get();
 
 	    cliente.setDataInserimento(c.getDataInserimento());
-	    cliente.setFatturatoAnnuale(c.getFatturatoAnnuale());
+	    cliente.setFatturatoTotale(c.getFatturatoTotale());
 		
 		try {
 		service.update(id, cliente);

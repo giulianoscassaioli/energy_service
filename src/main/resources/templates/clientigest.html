@@ -103,8 +103,8 @@
 							th:field="*{dataInserimento}"></td>
 						<td th:text="${cliente.getDataUltimoContatto()}"
 							th:field="*{dataUltimoContatto}"></td>
-						<td th:text="${cliente.getFatturatoAnnuale()}"
-							th:field="*{fatturatoAnnuale}"></td>
+						<td th:text="${cliente.getFatturatoTotale()}"
+							th:field="*{fatturatoTotale}"></td>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get" action="#"
 							th:action="@{/web/clienti/aggiornaCliente/{id}(id=${cliente.getId()})}">
 								<td><input type="submit" value="Aggiorna"></td>
@@ -128,32 +128,10 @@
 		</a></li>
 	</ul> 
 	</nav>
-<!-- 	<nav aria-label="Pagination" th:if="${clienti.totalPages gt 0}"> -->
-<!--     <ul class="pagination justify-content-center font-weight-bold"> -->
-<!--         <li class="page-item" th:classappend="${clienti.number eq 0} ? 'disabled'"> -->
-<!--             <a class="page-link" -->
-<!--                th:href="@{/web/clienti/clienti?pageNumber={id}(id=${clienti.number lt 2 ? 1 : clienti.number})}" -->
-<!--                aria-label="Previous" title="Previous Page" data-toggle="tooltip"> -->
-<!--                 <span aria-hidden="true">&laquo;</span> -->
-<!--             </a> -->
-<!--         </li> -->
-<!--         <li class="page-item" th:classappend="${i eq clienti.number + 1} ? 'active'" -->
-<!--             th:each="i : ${#numbers.sequence( 1, clienti.totalPages, 1)}"> -->
-<!--             <a class="page-link" th:href="@{/web/clienti/clienti?pageNumber={id}(id=${i})}" th:text="${i}" -->
-<!--                th:title="${'Page '+ i}" data-toggle="tooltip"></a> -->
-<!--         </li> -->
-<!--         <li class="page-item" th:classappend="${clienti.number + 1 eq clienti.totalPages} ? 'disabled'"> -->
-<!--             <a class="page-link" -->
-<!--                th:href="@{/web/clienti/clienti?pageNumber={id}(id=${clienti.number + 2})}" -->
-<!--                aria-label="Next" title="Next Page" data-toggle="tooltip"> -->
-<!--                 <span aria-hidden="true">&raquo;</span> -->
-<!--             </a> -->
-<!--         </li> -->
-<!--     </ul> -->
-<!-- </nav> -->
+	
             
 	<div class="text-center">
-		<!-- 		<a href="#" class="btn btn-info" th:href="@{/studenteAggiungi}">Aggiungi Studente-->
+
 		</a> <a href="#" class="btn btn-info"
 			th:href="@{/web/clienti/homeclienti}">Torna alla home</a>
 			</a> <a sec:authorize="hasRole('ROLE_ADMIN')" href="#" class="btn btn-info"

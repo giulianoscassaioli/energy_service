@@ -105,11 +105,14 @@ public class FatturaControllerWeb {
 	}
 
 	@GetMapping("/getbyrangeimporto")
-	public ModelAndView getfatturabyrangeimportoviewadmin(Pageable page,@RequestParam(defaultValue = "0") BigDecimal minimo,
-			@RequestParam(defaultValue = "100000") BigDecimal massimo
+	public ModelAndView getfatturabyrangeimportoviewadmin(Pageable page,@RequestParam(defaultValue = "0",required = false) BigDecimal minimo,
+			@RequestParam(defaultValue = "100000",required = false) BigDecimal massimo
 			, Integer size,@RequestParam(defaultValue = "0") Integer pageNumber) {
 		ModelAndView myModel=new ModelAndView();
+        
 		Page<Fattura> list = service.findByRangeImporto(minimo, massimo, page.withPage(pageNumber));
+		
+		
 		int totalPages = list.getTotalPages();
 	    long totalItems = list.getTotalElements();
 	    List<Fattura> fatture = list.getContent();

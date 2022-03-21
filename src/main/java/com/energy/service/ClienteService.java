@@ -159,7 +159,7 @@ public class ClienteService {
 			cliUpdate.setDataUltimoContatto(c.getDataUltimoContatto());
 			cliUpdate.setEmail(c.getEmail());
 			cliUpdate.setEmailContatto(c.getEmailContatto());
-			cliUpdate.setFatturatoAnnuale(c.getFatturatoAnnuale());
+			cliUpdate.setFatturatoTotale(c.getFatturatoTotale());
 			cliUpdate.setIndirizzoSedeLegale(c.getIndirizzoSedeLegale());
 			cliUpdate.setIndirizzoSedeOperativa(c.getIndirizzoSedeOperativa());
 			cliUpdate.setNomeContatto(c.getNomeContatto());
@@ -192,8 +192,8 @@ public class ClienteService {
 	}
 
 
-	public Page<Cliente> findByFatturatoAnnuale(Pageable page, BigDecimal fatturato) {
-		return clienteRepository.findByFatturatoAnnuale(page, fatturato);
+	public Page<Cliente> findByFatturatoTotale(Pageable page, BigDecimal fatturato) {
+		return clienteRepository.findByFatturatoTotale(page, fatturato);
 	}
 
 	public Page<Cliente> findByDataInserimento(Pageable page, LocalDate data) {
@@ -204,8 +204,8 @@ public class ClienteService {
 		return clienteRepository.findByDataUltimoContatto(page, data);
 	}
 
-	public Page<Cliente> findByFatturatoAnnuale(Pageable pageable) {
-		return clienteRepository.findByOrderByFatturatoAnnuale(pageable);
+	public Page<Cliente> findByFatturatoTotale(Pageable pageable) {
+		return clienteRepository.findByOrderByFatturatoTotale(pageable);
 
 	}
 

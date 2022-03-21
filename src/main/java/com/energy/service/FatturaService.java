@@ -134,7 +134,7 @@ public class FatturaService {
 			
 		}
 		totFatture= totFatture.add(f.getImporto());
-		c.setFatturatoAnnuale(totFatture);
+		c.setFatturatoTotale(totFatture);
 		
 	}
 	
@@ -145,7 +145,7 @@ public class FatturaService {
 			
 		}
 		totFatture= totFatture.subtract(f.getImporto());
-		c.setFatturatoAnnuale(totFatture);
+		c.setFatturatoTotale(totFatture);
 		
 	}
 	
@@ -155,7 +155,7 @@ public class FatturaService {
 			totFatture = totFatture.add(fattura.getImporto());
 			
 		}
-		c.setFatturatoAnnuale(totFatture);
+		c.setFatturatoTotale(totFatture);
 		
 	}
 	

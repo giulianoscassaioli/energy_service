@@ -13,17 +13,20 @@
 - [License](#License)
 
 ## Introduction and Technologies stack
-This is a CRM application to manage clients and their invoces.
-The User can Login with the signUp function and viewing the list of all the clients
+This is a CRM application to manage Clients and their Invoces.
+Every User registered can Login or can SignUp if they are new to the service,
+then they can view the list of all the Clients
 and their invoces and have different ways of looking for them within the application.
-Loging in with the Username "admin" and password "admin" gives the user extra-privileges
+Loging in with the Username "admin" and password "admin" gives the User extra-privileges
 such us deleting a client or an invoice, updating them or saving new ones in the system.
 
 ### Tech stack: 
 - Java + Spring Boot
 - Authentication through Jason Web Token for the API RESTfull service
 - Authentication for the Web Service (including Login and Signup)
+- Secure storage of the password using encryption
 - Support of Pagination
+- Auto-calculation of Clients total income based on their Invoces
 - JUnit
 - Swagger Documentation
 - Eclipse
@@ -98,7 +101,7 @@ Examples of JSON to insert into the BODY of the POST Request to save a new Clien
   },
   "dataInserimento": "2022-03-15",
   "dataUltimoContatto": "2022-03-15",
-  "fatturatoAnnuale": 0
+  "fatturatoTotale": 0
   
 }
 ```

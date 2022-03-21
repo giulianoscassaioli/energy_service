@@ -97,7 +97,7 @@ public class ClienteController {
 	@GetMapping("/ordinaperfatturato")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	public ResponseEntity<Page<Cliente>> ordinaByFatturato(Pageable page) {
-		Page<Cliente> list = service.findByFatturatoAnnuale(page);
+		Page<Cliente> list = service.findByFatturatoTotale(page);
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 
@@ -140,7 +140,7 @@ public class ClienteController {
 	@GetMapping("/trovaperfatturatoannuale/{fatturato}")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	 public ResponseEntity<?> cercaByFatturatoAnnuale (Pageable page,@PathVariable BigDecimal fatturato){
-		Page<Cliente> clienti=service.findByFatturatoAnnuale(page,fatturato);
+		Page<Cliente> clienti=service.findByFatturatoTotale(page,fatturato);
 		 if(clienti.hasContent()) {
 			 return new ResponseEntity<>(clienti.getContent(), HttpStatus.OK);
 		 }
