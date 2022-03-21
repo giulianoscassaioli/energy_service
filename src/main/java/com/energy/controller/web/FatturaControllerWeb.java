@@ -74,14 +74,13 @@ public class FatturaControllerWeb {
 	   return "redirect:/web/fatture/fatture";
 		
 	}
-	//
+
 	@GetMapping("/getbyrangeimporto")
 	public ModelAndView getfatturabyrangeimportoviewadmin(Pageable page,@RequestParam(defaultValue = "0") BigDecimal minimo,
 			@RequestParam(defaultValue = "100000") BigDecimal massimo
 			, Integer size,@RequestParam(defaultValue = "0") Integer pageNumber) {
 		ModelAndView myModel=new ModelAndView();
-		Pageable pageable = PageRequest.of(pageNumber,10);
-		Page<Fattura> list = service.findByRangeImporto(minimo, massimo, pageable);
+		Page<Fattura> list = service.findByRangeImporto(minimo, massimo, page.withPage(pageNumber));
 		int totalPages = list.getTotalPages();
 	    long totalItems = list.getTotalElements();
 	    List<Fattura> fatture = list.getContent();
@@ -100,15 +99,13 @@ public class FatturaControllerWeb {
 			@RequestParam(defaultValue = "0") Integer pageNumber, @RequestParam(defaultValue = "50") Integer size) {
 
 		ModelAndView myModel=new ModelAndView();
-		Pageable pag = PageRequest.of(pageNumber, size);
-		Page<Fattura> list = service.findByData(data, pag);
+		Page<Fattura> list = service.findByData(data, page.withPage(pageNumber));
 		int totalPages = list.getTotalPages();
 	    long totalItems = list.getTotalElements();
 	    myModel.addObject("currentPage", pageNumber);
 	    myModel.addObject("totalPages", totalPages);
 	    myModel.addObject("totalItems", totalItems);
 		myModel.addObject("fatture", list);
-		myModel.addObject("totalPages",list.getTotalPages());
 		myModel.setViewName("fatturegest");
 		return myModel;
 	}
@@ -122,9 +119,6 @@ public class FatturaControllerWeb {
 		Page<Fattura> list = service.findByCliente(cliente, pag);
 		int totalPages = list.getTotalPages();
 		int currentPage= list.getNumber();
-//		if(totalPages==0) {
-//			totalPages=1;
-//		}
 	    long totalItems = list.getTotalElements();
 	    myModel.addObject("currentPage", currentPage);
 	    myModel.addObject("totalPages", totalPages);
@@ -146,7 +140,7 @@ public class FatturaControllerWeb {
 	    model.addObject("totalPages", totalPages);
 	    model.addObject("totalItems", totalItems);
 		model.addObject("fatture", find);
-		model.addObject("totalPages",find.getTotalPages());
+		//model.addObject("totalPages",find.getTotalPages());
 		model.setViewName("fatturegest");
 		return model;
 

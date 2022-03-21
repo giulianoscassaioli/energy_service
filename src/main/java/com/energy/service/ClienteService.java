@@ -183,7 +183,7 @@ public class ClienteService {
 	}
 
 	public Page<Cliente> findByParteDelNome(String nome, Pageable pageable) {
-		return clienteRepository.findByRagioneSocialeLike("%" + nome + "%", pageable);
+		return clienteRepository.findByRagioneSocialeLikeIgnoreCase("%" + nome + "%", pageable);
 	}
 	
 	public Page<Cliente> findAllClienti(Pageable pageable) {

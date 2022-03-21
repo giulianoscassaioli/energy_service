@@ -1,8 +1,11 @@
 package com.energy.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,8 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -65,7 +67,7 @@ public class Cliente {
 	public Cliente(String ragioneSociale, String partitaIva, TipoCliente tipoCliente, String email, String pec,
 			String telefono, String nomeContatto, String cognomeContatto, String telefonoContatto, String emailContatto,
 			Indirizzo indirizzoSedeOperativa, Indirizzo indirizzoSedeLegale, LocalDate dataInserimento,
-			LocalDate dataUltimoContatto, Double fatturatoAnnuale) {
+			LocalDate dataUltimoContatto,Double fatturatoAnnuale) {
 		this.ragioneSociale = ragioneSociale;
 		this.partitaIva = partitaIva;
 		this.tipoCliente = tipoCliente;

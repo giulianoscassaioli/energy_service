@@ -56,6 +56,7 @@ public class FatturaService {
 			throw new CrmException("La data fattura deve essere nel formato yyyy-MM-dd");
 		}
 		
+			
 		return fatturaRepository.save(fattura);
 	}
 
@@ -77,8 +78,11 @@ public class FatturaService {
 	}
 
 	public void deleteById(Long id) {
+		
 		Optional<Fattura> fat =fatturaRepository.findById(id);
+		
 		if(fat.isPresent()) {
+			
 			fatturaRepository.deleteByIdWithJPQL(fat.get().getId());
 		}
 	}

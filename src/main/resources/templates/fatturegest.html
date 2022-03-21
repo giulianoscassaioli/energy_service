@@ -62,9 +62,9 @@
 				<div class="form-label mb-4 form-group">
 					<label for="floatingInput3">Ricerca per Range Importo</label>
 					<div class="d-flex">
-						<input type="text" name="minimo" placeholder="importo minimo"
+						<input type="number" name="minimo" placeholder="importo minimo"
 							aria-label="Minimo" class="form-control"><input
-							type="text" name="massimo" placeholder="importo massimo"
+							type="number" name="massimo" placeholder="importo massimo"
 							aria-label="Massimo" class="form-control"><input
 							type="submit" value="Ricerca Per Range Importo">
 
@@ -117,7 +117,7 @@
 			</table>
 		</div>
 	</div>
-	<nav aria-label="Pagination" th:if="${totalPages gt 0}">
+	<nav aria-label="Pagination" th:if="${totalPages gt 1}">
 	<ul class="pagination justify-content-center font-weight-bold"> 
 		<li class="page-item"><a th:each="i:${#numbers.sequence(0, totalPages-1)}"
 			th:href="@{?pageNumber={n}(n=${i})}"><span th:text="${i+1}"></span>	

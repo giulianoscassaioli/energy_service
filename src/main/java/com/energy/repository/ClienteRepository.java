@@ -11,7 +11,7 @@ import com.energy.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
-	Page<Cliente> findByRagioneSocialeLike(String ragioneSociale,Pageable pageable);
+	Page<Cliente> findByRagioneSocialeLikeIgnoreCase(String ragioneSociale,Pageable pageable);
 	
 	Optional<Cliente> findByRagioneSociale(String ragioneSociale);
 	

@@ -131,19 +131,19 @@ public class PopolaDb implements CommandLineRunner {
 		cliente.save(c14);
 		
 
-		Fattura f1 = new Fattura(c1, LocalDate.of(2020, 2, 12), 146l, 2020, new BigDecimal("830.50"), "pagata");
-		Fattura f2 = new Fattura(c2, LocalDate.of(2019, 3, 21), 28l, 2020, new BigDecimal("100.50"), "non pagata");
-		Fattura f3 = new Fattura(c3, LocalDate.of(2007, 6, 11), 13l, 2020, new BigDecimal("23.50"), "in transanzione");
-		Fattura f4 = new Fattura(c4, LocalDate.of(2011, 2, 13), 125l, 2020, new BigDecimal("900.50"), "pagata");
-		Fattura f5 = new Fattura(c5, LocalDate.of(2000, 1, 19), 196l, 2020, new BigDecimal("3356.50"), "in attesa");
-		Fattura f6 = new Fattura(c6, LocalDate.of(2012, 2, 23), 137l, 2020, new BigDecimal("8632.50"), "non solvibile");
-		Fattura f7 = new Fattura(c7, LocalDate.of(2015, 9, 17), 104l, 2020, new BigDecimal("8765.50"), "pagata");
-		Fattura f8 = new Fattura(c8, LocalDate.of(2019, 4, 19), 127l, 2020, new BigDecimal("1358.50"), "pagata");
-		Fattura f9 = new Fattura(c9, LocalDate.of(2010, 6, 20), 150l, 2020, new BigDecimal("8643.50"), "non solvibile");
-		Fattura f10 = new Fattura(c10, LocalDate.of(2019, 11, 21), 134l, 2020, new BigDecimal("3676.50"), "pagata");
-		Fattura f11 = new Fattura(c11, LocalDate.of(2011, 10, 23), 61l, 2020, new BigDecimal("1367.50"), "in attesa");
-		Fattura f12 = new Fattura(c12, LocalDate.of(2012, 7, 26), 135l, 2020, new BigDecimal("25.50"), "pagata");
-		Fattura f13 = new Fattura(c13, LocalDate.of(2014, 1, 29), 169l, 2020, new BigDecimal("1954.50"),
+		Fattura f1 = new Fattura(c1, LocalDate.of(2020, 2, 12), 146l, 2022, new BigDecimal("830.50"), "pagata");
+		Fattura f2 = new Fattura(c2, LocalDate.of(2019, 3, 21), 28l, 2022, new BigDecimal("100.50"), "non pagata");
+		Fattura f3 = new Fattura(c3, LocalDate.of(2007, 6, 11), 13l, 2022, new BigDecimal("23.50"), "in transanzione");
+		Fattura f4 = new Fattura(c4, LocalDate.of(2011, 2, 13), 125l, 2022, new BigDecimal("900.50"), "pagata");
+		Fattura f5 = new Fattura(c5, LocalDate.of(2000, 1, 19), 196l, 2022, new BigDecimal("3356.50"), "in attesa");
+		Fattura f6 = new Fattura(c6, LocalDate.of(2012, 2, 23), 137l, 2022, new BigDecimal("8632.50"), "non solvibile");
+		Fattura f7 = new Fattura(c7, LocalDate.of(2015, 9, 17), 104l, 2022, new BigDecimal("8765.50"), "pagata");
+		Fattura f8 = new Fattura(c8, LocalDate.of(2019, 4, 19), 127l, 2022, new BigDecimal("1358.50"), "pagata");
+		Fattura f9 = new Fattura(c9, LocalDate.of(2010, 6, 20), 150l, 2022, new BigDecimal("8643.50"), "non solvibile");
+		Fattura f10 = new Fattura(c10, LocalDate.of(2019, 11, 21), 134l, 2022, new BigDecimal("3676.50"), "pagata");
+		Fattura f11 = new Fattura(c11, LocalDate.of(2011, 10, 23), 61l, 2022, new BigDecimal("1367.50"), "in attesa");
+		Fattura f12 = new Fattura(c12, LocalDate.of(2012, 7, 26), 135l, 2022, new BigDecimal("25.50"), "pagata");
+		Fattura f13 = new Fattura(c13, LocalDate.of(2014, 1, 29), 169l, 2022, new BigDecimal("1954.50"),
 				"in transanzione");
 		Fattura f14 = new Fattura(c14, LocalDate.of(2010, 9, 16), 12l, 2020, new BigDecimal("1936.50"), "non pagata");
 		
@@ -155,20 +155,20 @@ public class PopolaDb implements CommandLineRunner {
 		Fattura f20 = new Fattura(c14, LocalDate.of(2012, 2, 23), 1374l, 2020, new BigDecimal("8632.50"), "non solvibile");
 		Fattura f21 = new Fattura(c14, LocalDate.of(2015, 9, 17), 1044l, 2020, new BigDecimal("8765.50"), "pagata");
 		Fattura f22 = new Fattura(c14, LocalDate.of(2019, 4, 19), 1275l, 2020, new BigDecimal("1358.50"), "pagata");
-		Fattura f23 = new Fattura(c14, LocalDate.of(2010, 6, 20), 1505l, 2020, new BigDecimal("8643.50"), "non solvibile");
-		Fattura f24 = new Fattura(c14, LocalDate.of(2019, 11, 21), 1345l, 2020, new BigDecimal("3676.50"), "pagata");
-		Fattura f25 = new Fattura(c14, LocalDate.of(2011, 10, 23), 615l, 2020, new BigDecimal("1367.50"), "in attesa");
-		Fattura f26 = new Fattura(c14, LocalDate.of(2012, 7, 26), 1355l, 2020, new BigDecimal("25.50"), "pagata");
-		Fattura f27 = new Fattura(c14, LocalDate.of(2014, 1, 29), 1695l, 2020, new BigDecimal("1954.50"),
+		Fattura f23 = new Fattura(c14, LocalDate.of(2010, 6, 20), 1505l, 2022, new BigDecimal("8643.50"), "non solvibile");
+		Fattura f24 = new Fattura(c14, LocalDate.of(2019, 11, 21), 1345l, 2022, new BigDecimal("3676.50"), "pagata");
+		Fattura f25 = new Fattura(c14, LocalDate.of(2011, 10, 23), 615l, 2022, new BigDecimal("1367.50"), "in attesa");
+		Fattura f26 = new Fattura(c14, LocalDate.of(2012, 7, 26), 1355l, 2022, new BigDecimal("25.50"), "pagata");
+		Fattura f27 = new Fattura(c14, LocalDate.of(2014, 1, 29), 1695l, 2022, new BigDecimal("1954.50"),
 				"in transanzione");
-		Fattura f28 = new Fattura(c14, LocalDate.of(2010, 9, 16), 1599l, 2020, new BigDecimal("1936.50"), "non pagata");
+		Fattura f28 = new Fattura(c14, LocalDate.of(2010, 9, 16), 1599l, 2022, new BigDecimal("1936.50"), "non pagata");
 
-		Fattura f29 = new Fattura(c14, LocalDate.of(2014, 1, 29), 16905l, 2020, new BigDecimal("1954.50"),
+		Fattura f29 = new Fattura(c14, LocalDate.of(2014, 1, 29), 16905l, 2022, new BigDecimal("1954.50"),
 				"in transanzione");
-		Fattura f30 = new Fattura(c14, LocalDate.of(2010, 9, 16), 10325l, 2020, new BigDecimal("1936.50"), "non pagata");
-		Fattura f31 = new Fattura(c14, LocalDate.of(2014, 1, 29), 1697l, 2020, new BigDecimal("1954.50"),
+		Fattura f30 = new Fattura(c14, LocalDate.of(2010, 9, 16), 10325l, 2022, new BigDecimal("1936.50"), "non pagata");
+		Fattura f31 = new Fattura(c14, LocalDate.of(2014, 1, 29), 1697l, 2022, new BigDecimal("1954.50"),
 				"in transanzione");
-		Fattura f32 = new Fattura(c14, LocalDate.of(2010, 9, 16), 13327l, 2020, new BigDecimal("1936.50"), "non pagata");
+		Fattura f32 = new Fattura(c14, LocalDate.of(2010, 9, 16), 13327l, 2022, new BigDecimal("1936.50"), "non pagata");
 		
 		fattura.save(f1);
 		fattura.save(f2);

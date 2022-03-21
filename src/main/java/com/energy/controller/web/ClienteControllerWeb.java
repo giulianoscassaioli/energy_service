@@ -2,7 +2,6 @@ package com.energy.controller.web;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -49,13 +48,19 @@ public class ClienteControllerWeb {
 
 	@Autowired
 	IndirizzoService indservice;
+	
 
 	@GetMapping("/clienti")
-	public ModelAndView viewCorsi(Pageable page,@RequestParam(required = false, defaultValue = "1") Integer pageNumber
+	public ModelAndView viewCorsi(Pageable page,@RequestParam(required = false, defaultValue = "0") Integer pageNumber
 			, Integer size) {
 		ModelAndView model = new ModelAndView();
-		Page<Cliente> find= service.findAllClienti(page.withPage(pageNumber -1));
-		model.addObject("currentPage", pageNumber);
+		Pageable pageable = PageRequest.of(pageNumber,10);
+		Page<Cliente> find= service.findAllClienti(pageable);
+		int totalPages = find.getTotalPages();
+        long totalItems = find.getTotalElements();
+        model.addObject("currentPage", pageNumber);
+        model.addObject("totalPages", totalPages);
+    	model.addObject("totalItems", totalItems);
 		model.addObject("clienti", find);
 		model.setViewName("clientigest");
 		return model;
@@ -81,18 +86,31 @@ public class ClienteControllerWeb {
 	}
 
 	@GetMapping("/getbyfatturato")
-	public ModelAndView getByfatturato(@RequestParam Double fatturato, Pageable page) {
+	public ModelAndView getByfatturato(@RequestParam Double fatturato, Pageable page,
+			@RequestParam(defaultValue = "0") Integer pageNumber,Integer size) {
 		ModelAndView model = new ModelAndView();
-		Page<Cliente> list = service.findByFatturatoAnnuale(page, fatturato);
+		Page<Cliente> list = service.findByFatturatoAnnuale(page.withPage(pageNumber), fatturato);
+		int totalPages = list.getTotalPages();
+	    long totalItems = list.getTotalElements();
+	    model.addObject("currentPage", pageNumber);
+	    model.addObject("totalPages", totalPages);
+	    model.addObject("totalItems", totalItems);
 		model.addObject("clienti", list);
 		model.setViewName("clientigest");
 		return model;
 	}
 
+
 	@GetMapping("/getbypartedelnome")
-	public ModelAndView getClientiByParteDelNome(@RequestParam String nome, Pageable page) {
+	public ModelAndView getClientiByParteDelNome(Pageable page,
+			@RequestParam(defaultValue = "0") Integer pageNumber,Integer size,String nome) {
 		ModelAndView model = new ModelAndView();
-		Page<Cliente> list = service.findByParteDelNome(nome, page);
+		Page<Cliente> list = service.findByParteDelNome(nome, page.withPage(pageNumber));
+		int totalPages = list.getTotalPages();
+	    long totalItems = list.getTotalElements();
+	    model.addObject("currentPage", pageNumber);
+	    model.addObject("totalPages", totalPages);
+	    model.addObject("totalItems", totalItems);
 		model.addObject("clienti", list);
 		model.setViewName("clientigest");
 		return model;
@@ -180,8 +198,7 @@ public class ClienteControllerWeb {
 	}
 	
 	@PostMapping("/aggiornaCliente2/{id}")
-	public String aggiorna2(@ModelAttribute("cliente")Cliente cliente,Model model, @PathVariable Long id/*,/* @RequestParam (required = false)
-			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto*/){
+	public String aggiorna2(@ModelAttribute("cliente")Cliente cliente,Model model, @PathVariable Long id){
 		
 		String viaLegale = cliente.getIndirizzoSedeLegale().getVia();
 		int civicoLegale = cliente.getIndirizzoSedeLegale().getCivico();
@@ -189,9 +206,9 @@ public class ClienteControllerWeb {
 		String comuneLeg =cliente.getIndirizzoSedeLegale().getComune().getNome();
 	    
 		
-		//Optional<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
+		
 		List<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
-		//if(indirizzoLegale.isPresent()) {
+
 		if(!indirizzoLegale.isEmpty()) {	
 			cliente.setIndirizzoSedeLegale(indirizzoLegale.get(0));
 		} else {
@@ -212,9 +229,8 @@ public class ClienteControllerWeb {
 		String comuneOp =cliente.getIndirizzoSedeOperativa().getComune().getNome();
 		String localitaOperativa = cliente.getIndirizzoSedeOperativa().getLocalita();
 		
-		//Optional<Indirizzo> indirizzoOperativa= ind.findByViaAndCivicoAndCapAndComuneNome(viaOperativa, civicoOperativa, capOperativa, comuneOp);
+
 		List<Indirizzo> indirizzoOperativa=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneOp);
-		//if(indirizzoOperativa.isPresent()) {
 		if(!indirizzoOperativa.isEmpty()) {
 			cliente.setIndirizzoSedeOperativa(indirizzoOperativa.get(0));
 		} else {
