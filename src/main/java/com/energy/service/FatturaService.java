@@ -17,6 +17,7 @@ import com.energy.exception.CrmException;
 import com.energy.model.Cliente;
 import com.energy.model.Fattura;
 import com.energy.model.Indirizzo;
+import com.energy.repository.ClienteRepository;
 import com.energy.repository.FatturaRepository;
 
 @Service
@@ -24,6 +25,9 @@ public class FatturaService {
 
 	@Autowired
 	FatturaRepository fatturaRepository;
+	
+	@Autowired
+	ClienteRepository clienteRepository;
 	
     String regex  = "((?:19|20)\\d\\d)-(0?[1-9]|1[012])-([12][0-9]|3[01]|0?[1-9])";
 	
@@ -40,6 +44,9 @@ public class FatturaService {
 			fatturaUpdate.setStatoFattura(fattura.getStatoFattura());
 			fatturaUpdate.setCliente(fattura.getCliente());
 			fatturaRepository.save(fatturaUpdate);
+			Cliente c= clienteRepository.findByRagioneSociale(fe.get().getCliente().getRagioneSociale()).get();
+			updateImportoTotaleCliente(c, fatturaUpdate);
+			clienteRepository.save(c);
 			return fatturaUpdate;
 		} else {
 			throw new CrmException("La fattura con questo id non esiste!");
@@ -56,7 +63,11 @@ public class FatturaService {
 			throw new CrmException("La data fattura deve essere nel formato yyyy-MM-dd");
 		}
 		
-			
+		Cliente c= clienteRepository.findByRagioneSociale(fattura.getCliente().getRagioneSociale()).get();
+	
+		addImportoFattura(c, fattura);
+		clienteRepository.save(c);
+
 		return fatturaRepository.save(fattura);
 	}
 
@@ -82,6 +93,11 @@ public class FatturaService {
 		Optional<Fattura> fat =fatturaRepository.findById(id);
 		
 		if(fat.isPresent()) {
+			
+			Cliente c= clienteRepository.findByRagioneSociale(fat.get().getCliente().getRagioneSociale()).get();
+			
+			subtractImportoFattura(c, fat.get());
+			clienteRepository.save(c);
 			
 			fatturaRepository.deleteByIdWithJPQL(fat.get().getId());
 		}
@@ -110,5 +126,39 @@ public class FatturaService {
 	public Page<Fattura> findByRangeImporto(BigDecimal minimo, BigDecimal massimo, Pageable page) {
 		return fatturaRepository.findByImportoBetweenOrderByImporto(minimo, massimo, page);
 	}
+	
+	public void addImportoFattura(Cliente c,Fattura f) {
+		BigDecimal totFatture= new BigDecimal("0");
+		for(Fattura fattura : c.getFatture()) {
+			totFatture = totFatture.add(fattura.getImporto());
+			
+		}
+		totFatture= totFatture.add(f.getImporto());
+		c.setFatturatoAnnuale(totFatture);
+		
+	}
+	
+	public void subtractImportoFattura(Cliente c,Fattura f) {
+		BigDecimal totFatture= new BigDecimal("0");
+		for(Fattura fattura : c.getFatture()) {
+			totFatture = totFatture.add(fattura.getImporto());
+			
+		}
+		totFatture= totFatture.subtract(f.getImporto());
+		c.setFatturatoAnnuale(totFatture);
+		
+	}
+	
+	public void updateImportoTotaleCliente(Cliente c,Fattura f) {
+		BigDecimal totFatture= new BigDecimal("0");
+		for(Fattura fattura : c.getFatture()) {
+			totFatture = totFatture.add(fattura.getImporto());
+			
+		}
+		c.setFatturatoAnnuale(totFatture);
+		
+	}
+	
+	
 
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.energy.exception.CrmException;
 import com.energy.model.Cliente;
 import com.energy.model.Fattura;
 import com.energy.service.ClienteService;
@@ -42,12 +43,40 @@ public class FatturaControllerWeb {
 		return model;
 	}
 
-	@PostMapping("/salvafattura")
-	public ModelAndView save(@RequestParam String ragioneSociale,
+	@GetMapping("/salvafattura")
+	public ModelAndView save(@RequestParam(defaultValue = "0") Integer pageNumber,@RequestParam (required= false)String ragioneSociale,
 			Long numero, Integer anno, BigDecimal importo, String stato,Pageable page) {
 		ModelAndView mv = new ModelAndView();
+		if(ragioneSociale==null && numero==null && anno==null && importo==null && stato==null)
+		{
+			Pageable pageable = PageRequest.of(pageNumber,10);
+			Page<Fattura> fatture=service.findAllFatture(pageable);
+			int totalPages = fatture.getTotalPages();
+		    long totalItems = fatture.getTotalElements();
+			mv.addObject("currentPage", pageNumber);
+			mv.addObject("totalPages", totalPages);
+			mv.addObject("totalItems", totalItems);
+			mv.addObject("fatture", fatture);
+			mv.setViewName("fatturegest");
+			return mv;
+			
+		}
+		
+	    try {
 		service.save(new Fattura(clienteservice.findByParteDelNome(ragioneSociale, page).getContent().get(0), LocalDate.now(), numero, anno, importo, stato));
-		mv.addObject("fatture", service.findAllFatture(page));
+	     }catch (CrmException e){
+	    mv.addObject("messaggio",e.getMessage());
+	    mv.setViewName("errore");
+		return mv;
+	    }
+		Pageable pageable = PageRequest.of(pageNumber,10);
+		Page<Fattura> fatture=service.findAllFatture(pageable);
+		int totalPages = fatture.getTotalPages();
+	    long totalItems = fatture.getTotalElements();
+		mv.addObject("currentPage", pageNumber);
+		mv.addObject("totalPages", totalPages);
+		mv.addObject("totalItems", totalItems);
+		mv.addObject("fatture", fatture);
 		mv.setViewName("fatturegest");
 		return mv;
 	}

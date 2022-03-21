@@ -1,5 +1,6 @@
 package com.energy.controller;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -138,7 +139,7 @@ public class ClienteController {
 	 
 	@GetMapping("/trovaperfatturatoannuale/{fatturato}")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	 public ResponseEntity<?> cercaByFatturatoAnnuale (Pageable page,@PathVariable Double fatturato){
+	 public ResponseEntity<?> cercaByFatturatoAnnuale (Pageable page,@PathVariable BigDecimal fatturato){
 		Page<Cliente> clienti=service.findByFatturatoAnnuale(page,fatturato);
 		 if(clienti.hasContent()) {
 			 return new ResponseEntity<>(clienti.getContent(), HttpStatus.OK);

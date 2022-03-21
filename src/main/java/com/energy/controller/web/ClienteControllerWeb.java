@@ -1,5 +1,6 @@
 package com.energy.controller.web;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -86,7 +87,7 @@ public class ClienteControllerWeb {
 	}
 
 	@GetMapping("/getbyfatturato")
-	public ModelAndView getByfatturato(@RequestParam Double fatturato, Pageable page,
+	public ModelAndView getByfatturato(@RequestParam BigDecimal fatturato, Pageable page,
 			@RequestParam(defaultValue = "0") Integer pageNumber,Integer size) {
 		ModelAndView model = new ModelAndView();
 		Page<Cliente> list = service.findByFatturatoAnnuale(page.withPage(pageNumber), fatturato);
@@ -131,7 +132,7 @@ public class ClienteControllerWeb {
 			TipoCliente tipoCliente, String email, String pec, String telefono, String nomeContatto,
 			String cognomeContatto, String telefonoContatto, String emailContatto, String indirizzoSedeOperativa,
 			String indirizzoSedeLegale,
-			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto, Double fatturatoAnnuale,
+			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto,BigDecimal /*Double*/ fatturatoAnnuale,
 			Pageable page,Model model) {
 	
 		Comune comuneSOp=comuneRepository.findByNome(comuneSedeOperativa).get(0);
@@ -205,8 +206,7 @@ public class ClienteControllerWeb {
 		String capLegale = cliente.getIndirizzoSedeLegale().getCap();
 		String comuneLeg =cliente.getIndirizzoSedeLegale().getComune().getNome();
 	    
-		
-		
+	
 		List<Indirizzo> indirizzoLegale=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneLeg);
 
 		if(!indirizzoLegale.isEmpty()) {	
@@ -230,7 +230,7 @@ public class ClienteControllerWeb {
 		String localitaOperativa = cliente.getIndirizzoSedeOperativa().getLocalita();
 		
 
-		List<Indirizzo> indirizzoOperativa=ind.findByViaAndCivicoAndCapAndComuneNome(viaLegale, civicoLegale, capLegale, comuneOp);
+		List<Indirizzo> indirizzoOperativa=ind.findByViaAndCivicoAndCapAndComuneNome(viaOperativa, civicoOperativa, capOperativa, comuneOp);
 		if(!indirizzoOperativa.isEmpty()) {
 			cliente.setIndirizzoSedeOperativa(indirizzoOperativa.get(0));
 		} else {
@@ -252,6 +252,7 @@ public class ClienteControllerWeb {
 		Cliente c= service.findById(id).get();
 
 	    cliente.setDataInserimento(c.getDataInserimento());
+	    cliente.setFatturatoAnnuale(c.getFatturatoAnnuale());
 		
 		try {
 		service.update(id, cliente);

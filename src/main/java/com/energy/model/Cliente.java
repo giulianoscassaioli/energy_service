@@ -58,7 +58,7 @@ public class Cliente {
 	
 	private LocalDate dataInserimento;
 	private LocalDate dataUltimoContatto;
-	private Double fatturatoAnnuale;
+	private BigDecimal fatturatoAnnuale;
 	
 	@OneToMany( mappedBy = "cliente", cascade = { CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH}, fetch = FetchType.EAGER )
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -67,7 +67,8 @@ public class Cliente {
 	public Cliente(String ragioneSociale, String partitaIva, TipoCliente tipoCliente, String email, String pec,
 			String telefono, String nomeContatto, String cognomeContatto, String telefonoContatto, String emailContatto,
 			Indirizzo indirizzoSedeOperativa, Indirizzo indirizzoSedeLegale, LocalDate dataInserimento,
-			LocalDate dataUltimoContatto,Double fatturatoAnnuale) {
+			LocalDate dataUltimoContatto) {
+		
 		this.ragioneSociale = ragioneSociale;
 		this.partitaIva = partitaIva;
 		this.tipoCliente = tipoCliente;
@@ -82,7 +83,8 @@ public class Cliente {
 		this.indirizzoSedeLegale = indirizzoSedeLegale;
 		this.dataInserimento = dataInserimento;
 		this.dataUltimoContatto = dataUltimoContatto;
-		this.fatturatoAnnuale = fatturatoAnnuale;
+		
+		this.fatturatoAnnuale = new BigDecimal("0");
 	}
 	
 

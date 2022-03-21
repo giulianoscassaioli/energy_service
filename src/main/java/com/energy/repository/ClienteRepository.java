@@ -1,5 +1,6 @@
 package com.energy.repository;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -35,7 +36,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
 	Page<Cliente> findByOrderByIndirizzoSedeLegaleComuneProvinciaNome(Pageable page);
 	
-	Page<Cliente> findByFatturatoAnnuale (Pageable page, Double fatturato);
+	Page<Cliente> findByFatturatoAnnuale (Pageable page, BigDecimal fatturato);
 	
 	Page<Cliente> findByDataInserimento (Pageable page, LocalDate data);
 	
