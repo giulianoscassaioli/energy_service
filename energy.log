@@ -6560,4 +6560,9 @@ update fattura set anno=?, cliente_id=?, data_fattura=?, importo=?, numero=?, st
 ""2022-03-22 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 ""2022-03-22 [http-nio-8080-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 145 ms
 ""2022-03-22 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-22 [RMI TCP Connection(154)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-03-22 [RMI TCP Connection(154)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-22 [RMI TCP Connection(154)-127.0.0.1] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+""2022-03-22 [RMI TCP Connection(154)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Shutdown initiated...
+""2022-03-22 [RMI TCP Connection(154)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Shutdown completed.
 "
