@@ -50,51 +50,92 @@ Latest stable version: 1.0
 
 For the submission of a this app I decided to implement a REST interface for sending data. The output of the service will be the printing of the Client.
 
+SIGN-UP
+
+You can use The Rest service with Post Man.
+You can Sign-Up to the application at the link https://customers-management-service.herokuapp.com/auth/signup
+sending in the Body of the POST Request a Json like this:
+
+```
+{
+  "username": "yourUsername",
+  "email": "yourUsername",
+  "role": [
+    "user"
+  ],
+  "password": "yourPassword",
+  "nome": "yourName",
+  "cognome": "yourSurname"
+}
+
+```
+You can also choose your role if you make an admin account you will have extra-priveleges.
+
+LOGIN
+
+If you want to login now using your credentials simply make a post request to https://customers-management-service.herokuapp.com/auth/login
+sending in the Body of the Request a Json like this:
+
+```
+ {
+  "userName": "yourUsername",
+  "password": "yourPassword"
+}
+```
+You will have a response status code 200 and a response Bearer-Token to keep
+in order to have permission of using any function of this application by putting it
+into the headers section before making any request.
+From now on in your Headers section of any request choose in the field KEY->Authorization
+and in The field VALUE write Bearer then a space and the the token you received in your login response.
+
+SAVE A CLIENT
+
+URL: https://customers-management-service.herokuapp.com/api/salvacliente
 Examples of JSON to insert into the BODY of the POST Request to save a new Client:
 
  ``` 
  {
   "id":0,
-  "ragioneSociale": "string1",
-  "partitaIva": "string1",
+  "ragioneSociale": "clientsName",
+  "partitaIva": "client's VAT",
   "tipoCliente": "SRL",
-  "email": "string@email.com",
-  "pec": "string@pec.com",
+  "email": "email@email.com",
+  "pec": "pec@pec.com",
   "telefono": "06544555",
-  "nomeContatto": "string",
-  "cognomeContatto": "string",
-  "telefonoContatto": "string",
-  "emailContatto": "string",
+  "nomeContatto": "nameOfTheContact",
+  "cognomeContatto": "surnameOfTheContact",
+  "telefonoContatto": "phneOfTheContact",
+  "emailContatto": "emailOfTheContact",
   "indirizzoSedeOperativa": {
     "id": 0,
-    "via": "string",
-    "civico": 0,
-    "cap": "string",
-    "localita": "string",
+    "via": "address",
+    "civico": numberOfTheAddress,
+    "cap": "zipCode",
+    "localita": "location type",
     "comune": {
       "id": 1,
-      "nome": "string",
+      "nome": "name of the city",
       "provincia": {
         "id": 97,
-        "nome": "string",
-        "sigla": "string",
+        "nome": "name of the province",
+        "sigla": "Acronym of the province",
         "regione": "string"
       }
     }
   },
   "indirizzoSedeLegale": {
-    "id": 0,
-    "via": "string",
-    "civico": 0,
-    "cap": "string",
-    "localita": "string",
+   "id": 0,
+    "via": "address",
+    "civico": numberOfTheAddress,
+    "cap": "zipCode",
+    "localita": "location type",
     "comune": {
       "id": 1,
-      "nome": "string",
+      "nome": "name of the city",
       "provincia": {
         "id": 97,
-        "nome": "string",
-        "sigla": "string",
+        "nome": "name of the province",
+        "sigla": "Acronym of the province",
         "regione": "string"
       }
     }
@@ -105,6 +146,90 @@ Examples of JSON to insert into the BODY of the POST Request to save a new Clien
   
 }
 ```
+
+
+DELETE A CLIENT BY HIS ID NUMBER
+
+URL: https://customers-management-service.herokuapp.com/api/eliminacliente/{}
+
+You can also delete a client off the system by using this url and replacing the {} with the client's
+id numeber you wish to delete
+
+VIEW THE LIST OF ALL CLIENTS
+
+URL: https://customers-management-service.herokuapp.com/api/trovatutticlienti
+Just send a GET Request to this URL to see the list of all the clients in the system
+
+OTHER POSSIBLE OPERATIONS
+
+You can do the same thing did with clients by using a different End-Point
+and different Json.
+For Example you can add a new Invoice by sending a POST Request to
+
+URL: https://customers-management-service.herokuapp.com/api/salvafattura
+
+Json:
+
+```
+{
+  "id": 0,
+  "cliente": {
+    "id": 3,
+    "ragioneSociale": "string",
+    "partitaIva": "string",
+    "tipoCliente": "SRL",
+    "email": "string",
+    "pec": "string",
+    "telefono": "string",
+    "nomeContatto": "string",
+    "cognomeContatto": "string",
+    "telefonoContatto": "string",
+    "emailContatto": "string",
+    "indirizzoSedeOperativa": {
+      "id": 0,
+      "via": "string",
+      "civico": 0,
+      "cap": "string",
+      "localita": "string"
+      }
+    },
+    "indirizzoSedeLegale": {
+      "id": 0,
+      "via": "string",
+      "civico": 0,
+      "cap": "string",
+      "localita": "string",
+      "comune": {
+        "id": 0,
+        "nome": "string"
+      }
+    },
+    "dataInserimento": "2022-03-12",
+    "dataUltimoContatto": "2022-03-12",
+    "fatturatoTotale": 0,
+  "dataFattura": "2022-03-12",
+  "numero": 0,
+  "anno": 0,
+  "importo": 0,
+  "statoFattura": "string"
+}
+```
+Specifing an existing "ragioneSociale" previuosly saved in the system.
+
+
+You can delete an invoice sendig a DELETE Request at the end-point
+URL: https://customers-management-service.herokuapp.com/api/eliminafattura/{}
+
+just replace the {} with the invoice's
+id numeber you wish to delete.
+
+To view all the list of the invoices simply send a GET request at
+URL: https://customers-management-service.herokuapp.com/api/allfatture
+
+The application has many more functions as well!
+
+For having a list of all the functions of my Rest API Email me at giulgab87@gmail.com.
+
 ## Testing
 
 For the test I used Junit, testing all the critical modules of the system, both with unit tests on low level components and with black box tests of high level. 
@@ -119,8 +244,8 @@ For the test I used Junit, testing all the critical modules of the system, both 
 IDE:  
 - Eclipse
 
-Heroku service:  
-- https://www.heroku.com/
+Web Service Link:  
+- https://customers-management-service.herokuapp.com/
 
 
 Java:  

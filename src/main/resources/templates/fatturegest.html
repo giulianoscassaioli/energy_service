@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" th:href="@{/style.css}"/>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -8,30 +9,37 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pagina Fatture</title>
+
 </head>
-<body>
-	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Energy Service </a> <span
-			sec:authorize="isAuthenticated()" style="color: white"
-			sec:authentication="name">username</span>
-	</nav>
-	<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item" aria-current="page"><a href="#"
-				th:href="@{/web/clienti/homeclienti}">Home</a></li>
-			<li class="breadcrumb-item active" aria-current="page">Fatture</li>
-			<li class="breadcrumb-item"><a href="#"
-				th:href="@{/web/clienti/clienti}">Clienti</a></li>
-		</ol>
-	</nav>
+<body class="largo">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Management Service</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#" th:href="@{/web/clienti/homeclienti}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Fatture<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" th:href="@{/web/clienti/clienti}">Clienti</a>
+      </li>
+    </ul>
+    <span sec:authorize="isAuthenticated()" style="color:white" sec:authentication="name">username</span>
+  </div>
+</nav>
 	<hr>
-	<h2>Ricerca</h2>
+	<h2 class="scritta">Ricerca</h2>
 	<div class="filtri d-flex flex-wrap justify-content-around">
 
 		<div class="filtro1 type-details w-auto ">
 			<form action="/web/fatture/getbycliente" method="GET">
 				<div class="form-label mb-4 form-group">
-					<label for="floatingInput2">Ricerca per Ragione Sociale</label>
+					<label class="scritta"for="floatingInput2">Ricerca per Ragione Sociale</label>
 					<div class="d-flex">
 						<input type="text" class="form-control" id="floatingInput2"
 							name="cliente" placeholder="Cliente"> <input
@@ -45,7 +53,7 @@
 		<div class="type-details w-auto ">
 			<form action="/web/fatture/getbydata" method="GET">
 				<div class="form-label mb-4 form-group">
-					<label for="floatingInput3">Ricerca per Data</label>
+					<label class="scritta"for="floatingInput3">Ricerca per Data</label>
 					<div class="d-flex">
 						<input type="date" class="form-control" name="data"
 							id="floatingInput3" placeholder="Fatturato" required> <input
@@ -60,7 +68,7 @@
 		<div class="type-details w-auto">
 			<form action="/web/fatture/getbyrangeimporto" method="GET">
 				<div class="form-label mb-4 form-group">
-					<label for="floatingInput3">Ricerca per Range Importo</label>
+					<label class="scritta" for="floatingInput3">Ricerca per Range Importo</label>
 					<div class="d-flex">
 						<input type="number" name="minimo" placeholder="importo minimo"
 							aria-label="Minimo" class="form-control"><input
@@ -84,22 +92,22 @@
 		<div class="table-responsive">
 			<table class="table table-hover table-sm">
 				<tr>
-					<th>Ragione Sociale</th>
-					<th>Data Fattura</th>
-					<th>Numero Fattura</th>
-					<th>Anno</th>
-					<th>Importo</th>
-					<th>Stato Fattura</th>
+					<th class="scritta">Ragione Sociale</th>
+					<th class="scritta">Data Fattura</th>
+					<th class="scritta">Numero Fattura</th>
+					<th class="scritta">Anno</th>
+					<th class="scritta">Importo</th>
+					<th class="scritta">Stato Fattura</th>
 				</tr>
 
 				<div th:each="fattura: ${fatture}">
 					<tr>
-						<td th:text="${fattura.getCliente().getRagioneSociale()}"></td>
-						<td th:text="${fattura.getDataFattura()}"></td>
-						<td th:text="${fattura.getNumero()}"></td>
-						<td th:text="${fattura.getAnno()}"></td>
-						<td th:text="${fattura.getImporto()}"></td>
-						<td th:text="${fattura.getStatoFattura()}"></td>
+						<td class="scritta"th:text="${fattura.getCliente().getRagioneSociale()}"></td>
+						<td class="scritta"th:text="${fattura.getDataFattura()}"></td>
+						<td class="scritta"th:text="${fattura.getNumero()}"></td>
+						<td class="scritta"th:text="${fattura.getAnno()}"></td>
+						<td class="scritta"th:text="${fattura.getImporto()}"></td>
+						<td class="scritta"th:text="${fattura.getStatoFattura()}"></td>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/fatture/aggiornaFattura/{id}(id=${fattura.getId()})}">
