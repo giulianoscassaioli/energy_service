@@ -24,6 +24,7 @@ import com.energy.model.Cliente;
 import com.energy.repository.ClienteRepository;
 import com.energy.service.ClienteService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 
@@ -40,6 +41,9 @@ public class ClienteController {
 
 	@PostMapping("/salvacliente")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@Operation(summary = "Endpoint per salvare un nuovo cliente ;prima di utlizzare eliminare gli array delle fatture"
+			+ " contenuti nel cliente; eliminare le provincie al interno del comune;"
+			+ " utlizzare degli id comune realmente presenti nel sitema")
 	public ResponseEntity<?> save(@RequestBody Cliente c) {
 		Optional<Cliente> cc= service.findById(c.getId());
 		if(!cc.isPresent()){
@@ -77,6 +81,9 @@ public class ClienteController {
 
 	@PutMapping("/aggiornacliente/{id}")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@Operation(summary = "Endpoint per aggiornare un cliente ;prima di utlizzare eliminare gli array delle fatture"
+			+ " contenuti nel cliente; eliminare le provincie al interno del comune;"
+			+ " utlizzare degli id comune realmente presenti nel sitema")
 	public ResponseEntity<Cliente> aggiornaCliente(@PathVariable(required = true) Long id, @RequestBody Cliente c) {
 		Cliente save = service.update(id, c);
 		repository.flush();
@@ -176,6 +183,9 @@ public class ClienteController {
 	
 	@GetMapping("/trovatutticlienti")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@Operation(summary = "EndPoint per avere la lista completa dei clienti; Per questo e tutti gli altri EndPoint"
+			+ " con paginazione lasciare l'elemento sort come una stringa vuota se non si vuole un particolare ordinamento"
+			+ " oppure inserire un sort valido")
      public ResponseEntity<?> findAllClienti (Pageable page){
 		 return new ResponseEntity<>(service.findAllClienti(page) , HttpStatus.OK);
 		 

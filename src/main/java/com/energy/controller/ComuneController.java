@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.energy.model.Comune;
 import com.energy.service.ComuneService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 
@@ -28,6 +29,9 @@ public class ComuneController {
 
 	@GetMapping("/comuni")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@Operation(summary = "EndPoint per avere la lista completa dei comuni; Per questo e tutti gli altri EndPoint"
+			+ " con paginazione lasciare l'elemento sort come una stringa vuota se non si vuole un particolare ordinamento"
+			+ " oppure inserire un sort valido")
 	public ResponseEntity<Page<Comune>> findAll(Pageable page){
 		return new ResponseEntity<> ( service.getAll(page), HttpStatus.OK);
 		

@@ -17,6 +17,7 @@ import com.energy.model.Indirizzo;
 import com.energy.model.Provincia;
 import com.energy.service.ProvinciaService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 
@@ -37,6 +38,9 @@ public class ProvinciaController {
 	
 	@GetMapping("/provincia/{id}")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@Operation(summary = "EndPoint per ricercare un provincia dato il suo id; Per questo e tutti gli altri EndPoint"
+			+ " con paginazione lasciare l'elemento sort come una stringa vuota se non si vuole un particolare ordinamento"
+			+ " oppure inserire un sort valido")
 	public ResponseEntity<Provincia> getProvinciaById( @PathVariable Long id) {
 		return new ResponseEntity<>( service.getById(id).get(), HttpStatus.OK);
 	}

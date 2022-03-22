@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.energy.model.Indirizzo;
 import com.energy.service.IndirizzoService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
@@ -32,6 +33,8 @@ public class IndirizzoController {
 
 	@PostMapping("/salvaindirizzo")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@Operation(summary = "Endpoint per salvare un nuovo indirizzo;prima di utlizzare lasciare l'id"
+			+ " del'indirizzo a 0 e cancellare la provincia al interno della comune; Per il comune utilizzare un id esistente")
 	public String save(@RequestBody Indirizzo c) {
 		service.save(c);
 		return "Indirizzo salvato con successo";
@@ -67,6 +70,8 @@ public class IndirizzoController {
 
 	@GetMapping("/indirizzo/via/{via}")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@Operation(summary = "EndPoint per ricercare un indirizzo dal nome della via; Lasciare l'elemento sort come una stringa vuota se non si vuole un particolare ordinamento"
+			+ " oppure inserire un sort valido")
 	public ResponseEntity<?> getIndirizzoByVia(@PathVariable String via, Pageable page) {
 		Page<Indirizzo> i= service.getIndirizzoByVia(via, page); 
 		if(i.hasContent()){
@@ -81,6 +86,8 @@ public class IndirizzoController {
 
 	@GetMapping("/indirizzi")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@Operation(summary = "EndPoint vedere la lista completa degli indirizzi; Lasciare l'elemento sort come una stringa vuota se non si vuole un particolare ordinamento"
+			+ " oppure inserire un sort valido")
 	public ResponseEntity<Page<Indirizzo>> getAllIndirizzi(Pageable page) {
 		return new ResponseEntity<>(service.getAllIndirizzi(page), HttpStatus.OK);
 
@@ -88,6 +95,8 @@ public class IndirizzoController {
 
 	@PutMapping("/aggiornaindirizzo/{id}")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@Operation(summary = "Endpoint per aggiornare un indirizzo;prima di utlizzare lasciare l'id"
+			+ " del'indirizzo a 0 e cancellare la provincia al interno della comune; Per il comune utilizzare un id esistente")
 	public String aggiornaIndirizzo(@PathVariable(required = true) Long id, @RequestBody Indirizzo c) {
 		service.update(id, c);
 		return "Indirizzo aggiornato";

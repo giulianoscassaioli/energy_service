@@ -25,6 +25,7 @@ import com.energy.model.Cliente;
 import com.energy.model.Fattura;
 import com.energy.service.FatturaService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
@@ -37,6 +38,9 @@ public class FatturaController {
 
 	@PostMapping("/salvafattura")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@Operation(summary = "Endpoint per salvare un nuova fattura ;prima di utlizzare eliminare gli array delle fatture"
+			+ " contenuti nel cliente; eliminare le provincia al interno del comune,ed i comuni al interno degli indirizzi"
+			+ " ;utilizzare un corretto id cliente con la sua rispettiva ragiona sociale")
 	public ResponseEntity<?> save(@RequestBody Fattura c) {
 		Optional<Fattura> cc = service.findById(c.getId());
 		if (!cc.isPresent()) {
@@ -60,6 +64,9 @@ public class FatturaController {
 
 	@PutMapping("/aggiornafattura/{id}")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@Operation(summary = "Endpoint per aggiornare una fattura ;prima di utlizzare eliminare gli array delle fatture"
+			+ " contenuti nel cliente; eliminare le provincia al interno del comune"
+			+ " ;utilizzare un corretto id cliente con la sua rispettiva ragiona sociale")
 	public ResponseEntity<Fattura> aggiornaFattura(@PathVariable(required = true) Long id, @RequestBody Fattura c) {
 		Fattura save = service.update(id, c);
 		return new ResponseEntity<>(save, HttpStatus.OK);
@@ -77,6 +84,9 @@ public class FatturaController {
 
 	@GetMapping("/ricercaperstato/{stato}")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@Operation(summary = "EndPoint per ricercare un fattura dal sua stato; Per questo e tutti gli altri EndPoint"
+			+ " con paginazione lasciare l'elemento sort come una stringa vuota se non si vuole un particolare ordinamento"
+			+ " oppure inserire un sort valido")
 	public ResponseEntity<?> findByStato(@PathVariable String stato, Pageable page) {
 		Page<Fattura> list = service.findByStato(stato, page);
 		if (list.hasContent()) {
