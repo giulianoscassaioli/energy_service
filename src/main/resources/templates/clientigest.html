@@ -131,7 +131,7 @@
 	</div>
 	<nav aria-label="Pagination" th:if="${totalPages gt 1}">
 	<ul class="pagination justify-content-center font-weight-bold"> 
-		<li class="page-item"><a th:each="i:${#numbers.sequence(0, totalPages-1)}"
+		<li class="page-item"><a class="scritta" th:each="i:${#numbers.sequence(0, totalPages-1)}"
 			th:href="@{?pageNumber={n}(n=${i})}"><span th:text="${i+1}"></span>	
 		</a></li>
 	</ul> 
