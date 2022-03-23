@@ -37,17 +37,17 @@
           <div class="center">
 
 				<div class="input-group-text">
-					<span class="input-group-text">Numero Fattura</span> <input
+					<span class="input-group-text">Numero Fattura</span> <input type="number"
 						name="numero" class="form-control" placeholder="Numero Fattura" th:field="*{numero}" disabled>
 				</div>
 
 				<div class="input-group-text">
-					<span class="input-group-text">Anno Fattura*</span> <input
+					<span class="input-group-text">Anno Fattura*</span> <input type="number"
 						name="anno" class="form-control" placeholder="Anno" th:field="*{anno}" required>
 				</div>
 
 				<div class="input-group-text">
-					<span class="input-group-text">Importo*</span> <input name="importo"
+					<span class="input-group-text">Importo*</span> <input name="importo" type="number" step="0.01"
 						class="form-control" placeholder="Importo" th:field="*{importo}" required>
 				</div>
 
