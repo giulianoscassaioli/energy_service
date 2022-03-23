@@ -163,7 +163,7 @@ public class PopolaDb implements CommandLineRunner {
 		Cliente c13 = new Cliente("Lamborghini", "963678", TipoCliente.SRL, "lamborghini@gmail.com", "lamborghini@pec.com", "1636912",
 				"Wanda", "Maximoff", "396543675", "wanda@gmail.com", i13, i13, LocalDate.of(2011, 5, 14),
 				LocalDate.of(2012, 1, 21));
-		Cliente c14 = new Cliente("Gelati", "683689", TipoCliente.SRL, "gelati@gmail.com", "gelati@pec.com", "1636954",
+		Cliente c14 = new Cliente("SmartWays", "683689", TipoCliente.SRL, "smartways@gmail.com", "smartways@pec.com", "1636954",
 				"Shantal", "Pera", "37125785", "shantal@gmail.com", i14, i14, LocalDate.of(2002, 4, 19),
 				LocalDate.of(2001, 5, 24));
 
