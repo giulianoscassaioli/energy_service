@@ -36,21 +36,21 @@
 			<div class="content">
 				<div class="center">
 					<div class="input-group-text">
-						<span class="input-group-text">Nome</span> <input
+						<span class="input-group-text">Nome*</span> <input
 							name="nomeContatto" class="form-control" placeholder="Nome" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cognome</span> <input
+						<span class="input-group-text">Cognome*</span> <input
 							name="cognomeContatto" class="form-control" placeholder="Cognome" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Ragione Sociale</span> <input
+						<span class="input-group-text">Ragione Sociale*</span> <input
 							name="ragioneSociale" class="form-control"
 							placeholder="Ragione Sociale" required>
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Partita Iva</span> <input
+						<span class="input-group-text">Partita Iva*</span> <input
 							name="partitaIva" class="form-control" placeholder="Partita Iva" required>
 					</div>
 
@@ -64,17 +64,17 @@
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Email</span> <input type="email" name="email"
+						<span class="input-group-text">Email*</span> <input type="email" name="email"
 							class="form-control" placeholder="Email" required>
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Pec</span> <input name="pec"
+						<span class="input-group-text">Pec*</span> <input name="pec"
 							 type="email" class="form-control" placeholder="Pec">
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Telefono</span> <input
+						<span class="input-group-text">Telefono*</span> <input
 							 name="telefono" class="form-control" placeholder="Telefono" required>
 					</div>
 
@@ -96,32 +96,32 @@
 					</select>
 				</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Via Sede Operativa</span> <input
+						<span class="input-group-text">Via Sede Operativa*</span> <input
 							name="viaSedeOperativa" class="form-control"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Civico Sede Operativa</span> <input
+						<span class="input-group-text">Civico Sede Operativa*</span> <input
 							name="civicoSedeOperativa" class="form-control" type="number"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cap Sede Operativa</span> <input
+						<span class="input-group-text">Cap Sede Operativa*</span> <input
 							name="capSedeOperativa" class="form-control" type="number"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Via Sede Legale</span> <input
+						<span class="input-group-text">Via Sede Legale*</span> <input
 							name="viaSedeLegale" class="form-control"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Civico Sede Legale</span> <input
+						<span class="input-group-text">Civico Sede Legale*</span> <input
 							name="civicoSedeLegale" class="form-control" type="number"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cap Sede Legale</span> <input
+						<span class="input-group-text">Cap Sede Legale*</span> <input
 							name="capSedeLegale" class="form-control" type="number"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
@@ -134,9 +134,10 @@
 				</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Data Ultimo Contatto</span> <input
-							type="date" name="dataUltimoContatto" class="form-control"
-							placeholder="Data Ultimo Contatto" required>
+						<span class="input-group-text">Data Ultimo Contatto*</span> <input
+							type="text" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+							name="dataUltimoContatto" class="form-control"
+							placeholder="yyyy-MM-dd" required>
 					</div>
 					<input class="mt-2 btn btn-info" type="submit" id="submitButton" th:value="Salva">
 					<input class="mt-2 btn btn-info" type="reset" id="resetButton" name="reset"

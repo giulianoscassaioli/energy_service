@@ -19,6 +19,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -57,6 +59,7 @@ public class Cliente {
 	private Indirizzo indirizzoSedeLegale;
 	
 	private LocalDate dataInserimento;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataUltimoContatto;
 	private BigDecimal fatturatoTotale;
 	

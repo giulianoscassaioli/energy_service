@@ -36,21 +36,21 @@
 			<div class="content">
 				<div class="center">
 					<div class="input-group-text">
-						<span class="input-group-text">Nome</span> <input
+						<span class="input-group-text">Nome*</span> <input
 							name="nomeContatto" class="form-control" placeholder="Nome" th:field="*{nomeContatto}"required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cognome</span> <input
+						<span class="input-group-text">Cognome*</span> <input
 							name="cognomeContatto" class="form-control" placeholder="Cognome" th:field="*{cognomeContatto}"required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Ragione Sociale</span> <input th:field="*{ragioneSociale}"
+						<span class="input-group-text">Ragione Sociale*</span> <input th:field="*{ragioneSociale}"
 							name="ragioneSociale" class="form-control"
 							placeholder="Ragione Sociale" required>
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Partita Iva</span> <input th:field="*{partitaIva}"
+						<span class="input-group-text">Partita Iva*</span> <input th:field="*{partitaIva}"
 							name="partitaIva" class="form-control" placeholder="Partita Iva" required>
 					</div>
 
@@ -64,17 +64,17 @@
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Email</span> <input type="email" name="email" th:field="*{email}"
+						<span class="input-group-text">Email*</span> <input type="email" name="email" th:field="*{email}"
 							class="form-control" placeholder="Email" required>
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Pec</span> <input name="pec" th:field="*{pec}"
+						<span class="input-group-text">Pec*</span> <input name="pec" th:field="*{pec}"
 							 type="email" class="form-control" placeholder="Pec">
 					</div>
 
 					<div class="input-group-text">
-						<span class="input-group-text">Telefono</span> <input th:field="*{telefono}"
+						<span class="input-group-text">Telefono*</span> <input th:field="*{telefono}"
 							name="telefono" class="form-control" placeholder="Telefono" required>
 					</div>
 
@@ -89,17 +89,17 @@
 							placeholder="Email Contatto">
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Via Sede Operativa</span> <input
+						<span class="input-group-text">Via Sede Operativa*</span> <input
 							name="viaSedeOperativa" class="form-control" th:field="*{indirizzoSedeOperativa.via}"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Civico Sede Operativa</span> <input
+						<span class="input-group-text">Civico Sede Operativa*</span> <input
 							name="civicoSedeOperativa" class="form-control" th:field="*{indirizzoSedeOperativa.civico}"
 							placeholder="Indirizzo Sede Operativa" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cap Sede Operativa</span> <input
+						<span class="input-group-text">Cap Sede Operativa*</span> <input
 							name="capSedeOperativa" class="form-control" th:field="*{indirizzoSedeOperativa.cap}"
 							placeholder="Cap Sede Operativa" required>
 					</div>
@@ -111,17 +111,17 @@
 					</select>
 				</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Via Sede Legale</span> <input th:field="*{indirizzoSedeLegale.via}"
+						<span class="input-group-text">Via Sede Legale*</span> <input th:field="*{indirizzoSedeLegale.via}"
 							name="viaSedeLegale" class="form-control"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Civico Sede Legale</span> <input th:field="*{indirizzoSedeLegale.civico}"
+						<span class="input-group-text">Civico Sede Legale*</span> <input th:field="*{indirizzoSedeLegale.civico}"
 							name="civicoSedeLegale" class="form-control"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Cap Sede Legale</span> <input  th:field="*{indirizzoSedeLegale.cap}"
+						<span class="input-group-text">Cap Sede Legale*</span> <input  th:field="*{indirizzoSedeLegale.cap}"
 							placeholder="Indirizzo Sede Legale" required>
 					</div>
 					<div class="input-group-text">
@@ -132,8 +132,9 @@
 					</select>
 				</div>
 					<div class="input-group-text">
-						<span class="input-group-text">Data Ultimo Contatto</span> <input th:field="*{dataUltimoContatto}"
-							type="date" pattern="yyyy-MM-dd" name="dataUltimoContatto" class="form-control"
+						<span class="input-group-text">Data Ultimo Contatto*</span> <input th:field="*{dataUltimoContatto}"
+							type="text" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+							 name="dataUltimoContatto" class="form-control"
 							placeholder="Data Ultimo Contatto"  required>
 					</div>
 					<div class="input-group-text">

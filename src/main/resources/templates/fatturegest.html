@@ -57,12 +57,13 @@
 				<div class="form-label mb-4 form-group">
 					<label class="scritta"for="floatingInput3">Ricerca per Data</label>
 					<div class="d-flex">
-						<input type="date" class="form-control" name="data"
-							id="floatingInput3" required> <input
+						<input type="text" class="form-control" name="data" placeholder="yyyy-MM-dd"
+							id="floatingInput3" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"required> <input
 							type="submit" value="Cerca">
 					</div>
 				</div>
 			</form>
+		
 
 		</div>
 
@@ -95,7 +96,7 @@
 			<table class="table table-hover table-sm">
 				<tr>
 					<th class="scritta">Ragione Sociale</th>
-					<th class="scritta">Data Fattura</th>
+					<th class="scritta">Data Inserimento</th>
 					<th class="scritta">Numero Fattura</th>
 					<th class="scritta">Anno</th>
 					<th class="scritta">Importo</th>

@@ -129,7 +129,7 @@ public class FatturaControllerWeb {
 	@GetMapping("/getbydata")
 	public ModelAndView getfatturabydata(Pageable page, @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate data,
 			@RequestParam(defaultValue = "0") Integer pageNumber, @RequestParam(defaultValue = "50") Integer size) {
-	
+	    System.out.println("ciao");
 		ModelAndView myModel=new ModelAndView();
 	
 		Page<Fattura> list = service.findByData(data, page.withPage(pageNumber));
