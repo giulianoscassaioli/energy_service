@@ -54,6 +54,9 @@ public class ClienteService {
 			throw new CrmException("Devi inserire un numero di telefono valido!");
 		}
 		
+		if(!controlloCampo(cliente.getTelefonoContatto())) {
+			throw new CrmException("Devi inserire un numero di telefono contatto valido!");
+		}
 		
 		if(clienteRepository.existsByPartitaIva(cliente.getPartitaIva())) {
 			throw new CrmException("Esiste gia un cliente con questa partita iva!");
