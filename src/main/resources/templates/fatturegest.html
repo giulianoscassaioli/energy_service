@@ -50,13 +50,15 @@
 		</div>
 
 
+
+
 		<div class="type-details w-auto ">
-			<form action="/web/fatture/getbydata" method="GET">
+			<form  action="/web/fatture/getbydata" method="GET" >
 				<div class="form-label mb-4 form-group">
 					<label class="scritta"for="floatingInput3">Ricerca per Data</label>
 					<div class="d-flex">
 						<input type="date" class="form-control" name="data"
-							id="floatingInput3" placeholder="Fatturato" required> <input
+							id="floatingInput3" required> <input
 							type="submit" value="Cerca">
 					</div>
 				</div>
@@ -111,12 +113,12 @@
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/fatture/aggiornaFattura/{id}(id=${fattura.getId()})}">
-							<td><input type="submit" value="Aggiorna"></td>
+							<td><input class="btn btn-info" type="submit" value="Aggiorna"></td>
 						</form>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/fatture/eliminaFattura/{id}(id=${fattura.getId()})}">
-							<td><input type="submit"
+							<td><input class="btn btn-info" type="submit"
 								onclick="return confirm('Sei sicuro di voler cancellare questa fattura?')"
 								value="Elimina"></td>
 						</form>
@@ -182,5 +184,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+
 </body>
 </html>

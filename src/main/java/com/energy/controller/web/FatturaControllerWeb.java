@@ -127,10 +127,11 @@ public class FatturaControllerWeb {
 		}
 	
 	@GetMapping("/getbydata")
-	public ModelAndView getfatturabydata(Pageable page, @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate data,
+	public ModelAndView getfatturabydata(Pageable page, @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate data,
 			@RequestParam(defaultValue = "0") Integer pageNumber, @RequestParam(defaultValue = "50") Integer size) {
-
+	
 		ModelAndView myModel=new ModelAndView();
+	
 		Page<Fattura> list = service.findByData(data, page.withPage(pageNumber));
 		int totalPages = list.getTotalPages();
 	    long totalItems = list.getTotalElements();
@@ -140,7 +141,8 @@ public class FatturaControllerWeb {
 		myModel.addObject("fatture", list);
 		myModel.setViewName("fatturegest");
 		return myModel;
-	}
+		}
+	
 	
 	
 	@GetMapping("/getbycliente")

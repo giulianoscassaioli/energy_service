@@ -8,7 +8,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 
 @Configuration
-@OpenAPIDefinition(info = @Info(title = "Energy Service API", version = "v1"))
+@OpenAPIDefinition(info = @Info(title = "Customer Management Service API", version = "v1"))
 @SecurityScheme(
 		
 		name = "bearerAuth",

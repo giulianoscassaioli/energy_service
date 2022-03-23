@@ -115,12 +115,12 @@
 							th:field="*{fatturatoTotale}"></td>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get" action="#"
 							th:action="@{/web/clienti/aggiornaCliente/{id}(id=${cliente.getId()})}">
-								<td><input type="submit" value="Aggiorna"></td>
+								<td><input class="btn btn-info" type="submit" value="Aggiorna"></td>
 						</form>
 						<form sec:authorize="hasRole('ROLE_ADMIN')" method="get"
 							action="#"
 							th:action="@{/web/clienti/eliminaCliente/{id}(id=${cliente.getId()})}">
-							<td><input type="submit"
+							<td><input class="btn btn-info" type="submit"
 								onclick="return confirm('Sei sicuro di voler cancellare questo cliente?')"
 								value="Elimina"></td>
 						</form>

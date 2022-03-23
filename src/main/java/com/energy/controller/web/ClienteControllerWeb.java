@@ -136,6 +136,7 @@ public class ClienteControllerWeb {
 			@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataUltimoContatto,BigDecimal fatturatoAnnuale,
 			Pageable page,Model model) {
 	
+		
 		Comune comuneSOp=comuneRepository.findByNome(comuneSedeOperativa).get(0);
 		Indirizzo sedeLegale = new Indirizzo();
 		sedeLegale.setCap(capSedeLegale);
@@ -207,9 +208,12 @@ public class ClienteControllerWeb {
 	@PostMapping("/aggiornaCliente2/{id}")
 	public String aggiorna2(@ModelAttribute("cliente")Cliente cliente,Model model, @PathVariable Long id){
 		
-		String viaLegale = cliente.getIndirizzoSedeLegale().getVia();
-		int civicoLegale = cliente.getIndirizzoSedeLegale().getCivico();
 		String capLegale = cliente.getIndirizzoSedeLegale().getCap();
+		
+		int civicoLegale = cliente.getIndirizzoSedeLegale().getCivico();
+		
+		String viaLegale = cliente.getIndirizzoSedeLegale().getVia();
+		
 		String comuneLeg =cliente.getIndirizzoSedeLegale().getComune().getNome();
 	    
 	
@@ -217,14 +221,18 @@ public class ClienteControllerWeb {
 
 		if(!indirizzoLegale.isEmpty()) {	
 			cliente.setIndirizzoSedeLegale(indirizzoLegale.get(0));
-		} else {
+		} 
+		
+		else {
 			Indirizzo indirizzoLeg = new Indirizzo();
 			indirizzoLeg.setCap(capLegale);
-			indirizzoLeg.setCivico(civicoLegale);
 			indirizzoLeg.setVia(viaLegale);
-			System.out.println(cliente.getIndirizzoSedeLegale().getComune().getId());
+			indirizzoLeg.setCivico(civicoLegale);
+		
 			Comune comuneLegale = comuneRepository.findById(cliente.getIndirizzoSedeLegale().getComune().getId()).get();
+			
 			indirizzoLeg.setComune(comuneLegale);
+			
 			ind.save(indirizzoLeg);
 			cliente.setIndirizzoSedeLegale(indirizzoLeg);
 		}
@@ -237,15 +245,18 @@ public class ClienteControllerWeb {
 		
 
 		List<Indirizzo> indirizzoOperativa=ind.findByViaAndCivicoAndCapAndComuneNome(viaOperativa, civicoOperativa, capOperativa, comuneOp);
+		
 		if(!indirizzoOperativa.isEmpty()) {
 			cliente.setIndirizzoSedeOperativa(indirizzoOperativa.get(0));
-		} else {
+		} 
+		
+		else {
 			Indirizzo indirizzoOpe = new Indirizzo();
 			indirizzoOpe.setCap(capOperativa);
 			indirizzoOpe.setCivico(civicoOperativa);
 			indirizzoOpe.setLocalita(localitaOperativa);
 			indirizzoOpe.setVia(viaOperativa);
-			System.out.println(cliente.getIndirizzoSedeOperativa().getComune().getId());
+			
 			Comune comuneOperativa = comuneRepository.findById(cliente.getIndirizzoSedeOperativa().getComune().getId()).get();
 	
 			indirizzoOpe.setComune(comuneOperativa);
