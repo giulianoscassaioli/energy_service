@@ -46,10 +46,28 @@ public class FormLoginConfigurationAdapter extends WebSecurityConfigurerAdapter 
 		return super.authenticationManager();
 	}
 
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//	
+//	   http.authorizeRequests().antMatchers(
+//		                "/",
+//		                "/swagger-ui.html"
+//        ).permitAll();
+//	   http.authorizeRequests().antMatchers("/*").permitAll().anyRequest().authenticated().and().formLogin();
+//     
+//		 
+////		http.authorizeRequests().antMatchers(
+////				"/").permitAll().anyRequest().authenticated().and().formLogin();      
+//		//http.authorizeRequests(authz -> authz.antMatchers("/*").permitAll().anyRequest().authenticated()).formLogin();
+//
+//	}
 	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		 http.authorizeRequests(authz -> authz.antMatchers("/*").permitAll().anyRequest().authenticated()).formLogin();
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/*","swagger-ui.html").permitAll();
 
+        http.authorizeRequests().antMatchers("/web/**").authenticated().and()
+            .formLogin();
+             
 	}
 	
 	
